@@ -657,294 +657,2814 @@ const CATEGORIES = [
 ];
 
 const QUESTIONS = {
-  biblia: [
-    { text: "¿Cuál fue la ofrenda que Dios le pidió a Caín?", options: ["Cordero Macho blanco", "Al Pentateuco- cinco primeros libros del Antiguo Testamento", "El Celo y Egoísmo"], correct: 0, tip: "Moises 5: 5,18" },
-    { text: "¿Cuál era el nombre original del Apóstol Pablo?", options: ["Fuego y Palomas", "Moisés", "Saulo de Tarso"], correct: 2, tip: "Hechos 8:3" },
-    { text: "¿Que pecado cometió David, que causo su perdición ante el Señor?", options: ["Jesucristo", "Un ángel", "Asesinato"], correct: 2, tip: "DyC 132:39" },
-    { text: "¿A qué edad Jesucristo empezó su ministerio terrenal?", options: ["66 libros", "950 años", "30 años"], correct: 2, tip: "Jesús el Cristo" },
-    { text: "¿Cuál fue la causa dela maldad de Saúl hacia David?", options: ["Gobernantes", "Sadrac, Masac y Abed Nego", "El Celo y Egoísmo"], correct: 2, tip: "1 Samuel 9:31" },
-    { text: "¿Cuanto años duro el ministerio terrenal de Jesucristo?", options: ["40 años", "969 años", "3 años"], correct: 2, tip: "Jesús el Cristo" },
-    { text: "¿Después de la muerte de que Rey, Israel se dividió en dos reinos?", options: ["Monte Horeb", "Salomón", "Un ángel"], correct: 1, tip: "GEE pág. 101" },
-    { text: "¿Qué significado tiene el nombre \"Moisés\"?", options: ["Repetición de la Ley", "Monte Horeb", "Salvado de las aguas"], correct: 2, tip: "Éxodo 2;10" },
-    { text: "¿Cuál es el primer libro de la Biblia donde se mencionan los diez mandamientos?", options: ["Éxodo", "Samuel", "Sefora"], correct: 0, tip: "Éxodo 20" },
-    { text: "¿Quien escribió el libro de Hechos de los apóstoles?", options: ["Jonás", "Tío y Sobrino", "Lucas"], correct: 2, tip: "GEE pág. 125-126" },
-    { text: "¿Cuantos libros tiene la Biblia?", options: ["3 años", "66 libros", "500 años"], correct: 1, tip: "39 AT 27 NT" },
-    { text: "¿A qué edad murió Josué del antiguo Testamento?", options: ["110 años", "500 años", "969 años"], correct: 0, tip: "Josué 24:29" },
-    { text: "¿Quien era el Gran Jehová del Antiguo Testamento?", options: ["Peleg", "Jesucristo", "Sadrac, Masac y Abed Nego"], correct: 1, tip: "GGE pág. 104" },
-    { text: "¿Como se llama el profeta que siendo niño fue llamado a ser profeta de Dios mientras servía al sacerdote Eli?", options: ["Moisés", "Samuel", "Asesinato"], correct: 1, tip: "1 Samuel 3" },
-    { text: "¿Cuantos años vivió NOE?", options: ["950 años", "3 años", "110 años"], correct: 0, tip: "Génesis 9:29" },
-    { text: "¿A que llaman los Judíos \"La Tora\"?", options: ["Porque peleo con un ángel por su bendición", "Miguel", "Al Pentateuco- cinco primeros libros del Antiguo Testamento"], correct: 2, tip: "GEE pág. 163" },
-    { text: "¿Como se llamaba el hijo mayor de Jacob, también llamado Israel?", options: ["Rubén", "Salida", "Semejante a Dios"], correct: 0, tip: "Génesis 29:32" },
-    { text: "¿Cuantos años vivió Matusalén?", options: ["3 años", "969 años", "66 libros"], correct: 1, tip: "Génesis 5:27" },
-    { text: "¿Como se llamaba el íntimo amigo del Rey David?", options: ["Jonatán", "En la Madrugada", "Raquel"], correct: 0, tip: "1 Samuel 13:23-31" },
-    { text: "¿Cuantos años vivió Abraham?", options: ["175 años", "500 años", "110 años"], correct: 0, tip: "Génesis 25:7" },
-    { text: "¿En que Monte se encuentra el Jardín de Getsemaní?", options: ["Moisés", "Salvado de las aguas", "En el Monte de los Olivos"], correct: 2, tip: null },
-    { text: "¿Por qué Efraín y Manases (los hijos de José) son contados entre las tribus de Israel?", options: ["En la Madrugada", "Esteban", "Porque Rubén perdió su herencia por desobediencia"], correct: 2, tip: "Génesis 29-30" },
-    { text: "¿Benjamín era el último hijo de Jacob, como se llamaba su madre?", options: ["Deuteronomio", "Peleg", "Raquel"], correct: 2, tip: "Génesis 29:32;35" },
-    { text: "¿Que lección le enseño el Señor a Pedro en un sueño acerca de comer animales inmundos?", options: ["Miguel", "500 años", "Que el evangelio no solo es para los del convenio, si no que para todos"], correct: 2, tip: "Hechos 10:9-16" },
-    { text: "¿Quien era el ángel que se presentó a Jesucristo en el Jardín de Getsemaní?", options: ["Miguel", "Samuel", "Fuego y Palomas"], correct: 0, tip: "Manual de Int. AT" },
-    { text: "¿A que se refiere Santiago cuando habla de la Religión pura y sin mácula?", options: ["En la Madrugada", "Visitar las viudas y alimentar a los hambrientos", "Un ángel"], correct: 1, tip: "Santiago 1:27" },
-    { text: "¿Como se llamaban los tres jóvenes que fueron metidos al horno de fuego y sobrevivieron en Babilonia?", options: ["Medico", "Sadrac, Masac y Abed Nego", "Samuel"], correct: 1, tip: "Daniel 3" },
-    { text: "¿Cuál fue la frase que Moisés utilizo para echar de su lado a Satanás en el Monte Sinaí?", options: ["Salomón", "950 años", "En el nombre del Ungido"], correct: 2, tip: "Moisés 1:21" },
-    { text: "¿Que significa Deuteronomio?", options: ["Repetición de la Ley", "Éxodo", "Un ángel"], correct: 0, tip: "GEE pág. 51" },
-    { text: "¿Qué significado tiene la palabra \"Arcángel\"?", options: ["Pescador", "Semejante a Dios", "A los primeros cinco libros del Antiguo Testamento"], correct: 1, tip: "GEE pág. 135" },
-    { text: "¿Quien escribió el Pentateuco, o los primeros cinco libros del Antiguo testamento?", options: ["Moisés", "Miguel", "Jesucristo"], correct: 0, tip: "GEE pág. 163" },
-    { text: "¿Con que símbolos o imágenes se representa al Espíritu Santo?", options: ["Deuteronomio", "Fuego y Palomas", "950 años"], correct: 1, tip: null },
-    { text: "¿A que se le llamaba el Pentecostés?", options: ["Fiesta de la cosecha", "Miguel", "Cordero Macho blanco"], correct: 0, tip: "Éxodo 19" },
-    { text: "¿Quien fue el profeta que predico en Nínive, después de ser tragado por un Pez?", options: ["Medico", "Jonás", "Raquel"], correct: 1, tip: "Jonás 1:1-2" },
-    { text: "¿Quienes fueron los únicos sobrevivientes desde la salida de Egipto hasta entrar a la tierra prometida?", options: ["En el Monte Sinaí", "Josué y Caleb", "Tío y Sobrino"], correct: 1, tip: "Números 14:6" },
-    { text: "¿Como se llamaba el apóstol que en el nuevo testamento murió apedreado después de ver a Dios en su trono?", options: ["Rubén", "Ministrantes", "Esteban"], correct: 2, tip: "Hechos 7: 55-60" },
-    { text: "¿De quien era descendiente Egyptus, la esposa de Cam, hijo de Noé?", options: ["Deuteronomio", "Caín", "Tío y Sobrino"], correct: 1, tip: "Abraham 1:23-25" },
-    { text: "¿Por quien fue escrito el libro del apocalipsis del Nuevo Testamento?", options: ["Salida", "Juan el amado", "Jesucristo"], correct: 1, tip: null },
-    { text: "¿Cuál es el Quinto libro del Antiguo Testamento?", options: ["Salvado de las aguas", "Deuteronomio", "Moisés"], correct: 1, tip: "GEE pág. 51" },
-    { text: "¿En que Monte recibió Moisés los diez mandamientos?", options: ["66 libros", "Recaudador de impuestos", "En el Monte Sinaí"], correct: 2, tip: "Éxodo 19:2 , 20:18" },
-    { text: "¿Que significa Éxodo?", options: ["Rubén", "Salida", "Sem, Cam y Jafet"], correct: 1, tip: "manual de seminario AT" },
-    { text: "¿Qué edad tenia Sara cuando un ángel del Señor le prometió un hijo a Abraham?", options: ["90 años", "950 años", "500 años"], correct: 0, tip: "Génesis 17:17" },
-    { text: "¿A que se le llamaba \"El Sanedrín\"?", options: ["El senado o corte superior de la Nación Judía", "En el nombre del Ungido", "Visitar las viudas y alimentar a los hambrientos"], correct: 0, tip: "GEE pág. 187" },
-    { text: "¿Que les indico Jacob a los de la tribu de Levi que serían, cuando les dio su última bendición antes de morir?", options: ["Ministrantes", "1 año", "En la Madrugada"], correct: 0, tip: "1 Cron. 5:1" },
-    { text: "¿Con que otro nombre se conocía el Monte Sinaí?", options: ["Al Pentateuco- cinco primeros libros del Antiguo Testamento", "Fuego y Palomas", "Monte Horeb"], correct: 2, tip: "Éxodo 3:1" },
-    { text: "¿Indica la dirección exacta donde nació Jesucristo, ciudad y provincia?", options: ["Ministrantes", "Belén de Judea, Nazareth", "Asesinato"], correct: 1, tip: "Lucas 2:1-7" },
-    { text: "¿Como se llama el joven profeta del Antiguo testamento que fue echado a un pozo y durmió con los leones?", options: ["Matías", "Semejante a Dios", "Daniel"], correct: 2, tip: "Daniel 6" },
-    { text: "¿Porque se le cambio el nombre a JACOB?", options: ["Salvado de las aguas", "Semejante a Dios", "Porque peleo con un ángel por su bendición"], correct: 2, tip: "Génesis 32:28" },
-    { text: "¿Cuanto tiempo estuvieron Noé y su familia dentro del arca antes de pisar tierra firme?", options: ["969 años", "1 año", "3 años"], correct: 1, tip: "Génesis 7:11-13, 8:13-16" },
-    { text: "¿Como se llamaba la esposa de Moisés?", options: ["Jonás", "Un ángel", "Sefora"], correct: 2, tip: "Éxodo 2:21" },
-    { text: "¿Que les indico Jacob a los de la tribu de Efraín que serían, cuando les dio su última bendición antes de morir?", options: ["Misioneros", "Fuego y Palomas", "Sem, Cam y Jafet"], correct: 0, tip: "Deut. 33:13-17" },
-    { text: "¿Cuanto años tenía Noé, cuando el Señor le mando a construir el Arca?", options: ["3 años", "110 años", "500 años"], correct: 2, tip: "Génesis 5:32" },
-    { text: "¿En qué momento del día cruzaron los Israelitas el mar Rojo?", options: ["En la Madrugada", "Un ángel", "Belén de Judea, Nazareth"], correct: 0, tip: "Manual de semin. A.T." },
-    { text: "¿Cuantos años estuvieron errantes, el pueblo de Israel antes de entrar a la tierra Prometida?", options: ["3 años", "30 años", "40 años"], correct: 2, tip: "Manual Inst. AT" },
-    { text: "¿Que les indico Jacob a los de la tribu de Judá que serían, cuando les dio su última bendición antes de morir?", options: ["Ministrantes", "Samuel", "Gobernantes"], correct: 2, tip: "Génesis 19:10" },
-    { text: "¿Quien fue el que bautizo a Adán?", options: ["Miguel", "Un ángel", "Miguel"], correct: 1, tip: "Moisés 6:64-66" },
-    { text: "¿Que profesión tenia Lucas?", options: ["Medico", "Que el evangelio no solo es para los del convenio, si no que para todos", "Gobernantes"], correct: 0, tip: "Col. 4:14" },
-    { text: "¿Quien fue la persona que le enseño a Moisés a delegar?", options: ["Salomón", "Su Suegro Jetro", "Moisés"], correct: 1, tip: "Éxodo 18:13-27" },
-    { text: "¿Que tiempo de nacido tenia Jesús cuando fue visitado por los reyes magos?", options: ["Salomón", "Saulo de Tarso", "Menos de dos años"], correct: 2, tip: "Jesús el Cristo" },
-    { text: "¿Cuál era el nombre de Adán en la vida Pre terrenal?", options: ["Miguel", "Belén de Judea, Nazareth", "Jonatán"], correct: 0, tip: "Manual de Inst. AT pág. 9" },
-    { text: "¿Que libros de la Biblia comprenden el \"Pentateuco\"?", options: ["En el nombre del Ungido", "500 años", "A los primeros cinco libros del Antiguo Testamento"], correct: 2, tip: "GEE pág. 163" },
-    { text: "¿Como se llamaban los hijos de NOE?", options: ["Sem, Cam y Jafet", "Cordero Macho blanco", "Ministrantes"], correct: 0, tip: "Génesis 6:10" },
-    { text: "¿En que Época fue dividida la tierra y se formaron los continentes?", options: ["Peleg", "Caín", "Menos de dos años"], correct: 0, tip: "Génesis 10:22-25)" },
-    { text: "¿A que se dedicaba Mateo?", options: ["Miguel", "Recaudador de impuestos", "175 años"], correct: 1, tip: "GEE pág. 132" },
-    { text: "¿Como se llamaba el apóstol que sucedió a Judas, después de su muerte?", options: ["El Celo y Egoísmo", "Matías", "Peleg"], correct: 1, tip: "Hechos 1:15-26" },
-    { text: "¿Que parentesco tenían, Abraham y Lot?", options: ["Salvado de las aguas", "Salida", "Tío y Sobrino"], correct: 2, tip: "Génesis 12:15" },
-    { text: "¿Que sucedió al tercer día de la creación?", options: ["Matías", "Pescador", "Se separaron los mares y la tierra"], correct: 2, tip: "Génesis 1:9-13" },
-    { text: "¿Cuál era el nombre de Noé en la vida Pre terrenal?", options: ["Un ángel", "Éxodo", "Gabriel"], correct: 2, tip: "Manual de Inst. AT pág. 34" },
-    { text: "¿Que profesión tenia Simón Pedro?", options: ["Moisés", "Pescador", "Éxodo"], correct: 1, tip: "Marcos 1:16" },
-    { text: "¿Quien le confirió el Sacerdocio de Melquisedec a Moisés?", options: ["Sem, Cam y Jafet", "Su suegro Jetro", "Moisés"], correct: 1, tip: "DyC 84:6" },
+  "biblia": [
+    {
+      "text": "¿Quién fue el primer hombre creado por Dios?",
+      "options": [
+        "Set",
+        "Adán",
+        "Enoc"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Cuántos días y noches llovió durante el Diluvio?",
+      "options": [
+        "40",
+        "7",
+        "100"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Qué recibió Moisés en el Monte Sinaí?",
+      "options": [
+        "El sacerdocio",
+        "Los Diez Mandamientos",
+        "Maná"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Quién derrotó al gigante Goliat con una honda?",
+      "options": [
+        "Saúl",
+        "Salomón",
+        "David"
+      ],
+      "correct": 2,
+      "tip": null
+    },
+    {
+      "text": "¿Cuál es el primer libro del Antiguo Testamento?",
+      "options": [
+        "Éxodo",
+        "Génesis",
+        "Levítico"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Quién fue tragado por un gran pez?",
+      "options": [
+        "Jonás",
+        "Pedro",
+        "Elías"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Qué mar partió Moisés para que el pueblo escapara?",
+      "options": [
+        "Mar Muerto",
+        "Mar Mediterráneo",
+        "Mar Rojo"
+      ],
+      "correct": 2,
+      "tip": null
+    },
+    {
+      "text": "¿Quién fue vendido como esclavo por sus hermanos?",
+      "options": [
+        "José de Egipto",
+        "Benjamín",
+        "Isaac"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Quién construyó el arca para salvar a su familia?",
+      "options": [
+        "Noé",
+        "Abraham",
+        "Lot"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿A qué ciudad se suponía que debía ir a predicar Jonás?",
+      "options": [
+        "Nínive",
+        "Tarso",
+        "Jericó"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Quién era la madre de Jesús?",
+      "options": [
+        "Marta",
+        "María",
+        "Elisabet"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿En qué ciudad nació Jesucristo?",
+      "options": [
+        "Nazaret",
+        "Jerusalén",
+        "Belén"
+      ],
+      "correct": 2,
+      "tip": null
+    },
+    {
+      "text": "¿Cuál era el oficio terrenal de José, el esposo de María?",
+      "options": [
+        "Pescador",
+        "Carpintero",
+        "Pastor"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Quién bautizó a Jesús en el río Jordán?",
+      "options": [
+        "Juan el Bautista",
+        "Pedro",
+        "Santiago"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Cuántos apóstoles originales llamó Jesús?",
+      "options": [
+        "7",
+        "10",
+        "12"
+      ],
+      "correct": 2,
+      "tip": null
+    },
+    {
+      "text": "¿Cuál fue el primer milagro público de Jesús?",
+      "options": [
+        "Caminar sobre el agua",
+        "Agua en vino",
+        "Sanar a un ciego"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Quién negó a Jesús tres veces antes de que cantara el gallo?",
+      "options": [
+        "Judas",
+        "Pedro",
+        "Tomás"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Quién traicionó a Jesús por 30 piezas de plata?",
+      "options": [
+        "Judas Iscariote",
+        "Pilato",
+        "Barrabás"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿A quién resucitó Jesús de entre los muertos después de cuatro días?",
+      "options": [
+        "Jairo",
+        "Lázaro",
+        "Esteban"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Cómo murió Jesucristo?",
+      "options": [
+        "Decapitado",
+        "Crucificado",
+        "De vejez"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Cuál es el último libro del Nuevo Testamento?",
+      "options": [
+        "Hechos",
+        "Apocalipsis",
+        "Judas"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Quién escribió la mayoría de las epístolas en el Nuevo Testamento?",
+      "options": [
+        "Juan",
+        "Pablo",
+        "Lucas"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Quién fue el rey de Israel conocido por su gran sabiduría?",
+      "options": [
+        "Salomón",
+        "Herodes",
+        "Acab"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Qué recibió el pueblo de Israel como alimento en el desierto?",
+      "options": [
+        "Trigo",
+        "Pescado",
+        "Maná"
+      ],
+      "correct": 2,
+      "tip": null
+    },
+    {
+      "text": "¿Cuál de estos es un Evangelio?",
+      "options": [
+        "Hebreos",
+        "Lucas",
+        "Romanos"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Quién era el hermano de Moisés que le ayudó a hablar?",
+      "options": [
+        "Caleb",
+        "Josué",
+        "Aarón"
+      ],
+      "correct": 2,
+      "tip": null
+    },
+    {
+      "text": "¿Cómo se llamaba el lugar donde vivían Adán y Eva?",
+      "options": [
+        "Sion",
+        "Edén",
+        "Canaán"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Quién era la esposa de Abraham?",
+      "options": [
+        "Rebeca",
+        "Raquel",
+        "Sara"
+      ],
+      "correct": 2,
+      "tip": null
+    },
+    {
+      "text": "¿Cuál es el mandamiento más importante según Jesús?",
+      "options": [
+        "No matarás",
+        "Amar a Dios",
+        "Guardar el día de reposo"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Quién vio una escalera que llegaba hasta el cielo?",
+      "options": [
+        "Jacob",
+        "Esaú",
+        "Labán"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Qué animal le habló a Balaam?",
+      "options": [
+        "Una serpiente",
+        "Un asna",
+        "Un león"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué ciudad cayó después de que el pueblo marchó alrededor de ella y tocó trompetas?",
+      "options": [
+        "Jericó",
+        "Babilonia",
+        "Sodoma"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Qué señal puso Dios para prometer que nunca habría otro diluvio?",
+      "options": [
+        "Una nube blanca",
+        "Un arco iris",
+        "Una estrella"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿En qué idioma se escribió la mayor parte del Nuevo Testamento original?",
+      "options": [
+        "Latín",
+        "Hebreo",
+        "Griego"
+      ],
+      "correct": 2,
+      "tip": null
+    },
+    {
+      "text": "¿Cómo se llamaba el monte donde crucificaron a Jesús?",
+      "options": [
+        "Gólgota",
+        "Olivete",
+        "Sinaí"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿A qué edad comenzó Jesucristo Su ministerio terrenal?",
+      "options": [
+        "12 años",
+        "30 años",
+        "33 años"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿De qué tribu era descendiente Jesucristo?",
+      "options": [
+        "Judá",
+        "Efraín",
+        "Benjamín"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Quién fue el primer mártir cristiano (muerto a pedradas)?",
+      "options": [
+        "Pablo",
+        "Esteban",
+        "Felipe"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿A quién se le apareció el Señor en una zarza ardiente?",
+      "options": [
+        "Abraham",
+        "Moisés",
+        "Jacob"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Cuántos libros hay en la Biblia Reina-Valera?",
+      "options": [
+        "50",
+        "66",
+        "72"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿En qué libro se menciona que Adán y Eva se regocijaron después de la Caída?",
+      "options": [
+        "Abraham",
+        "Moisés",
+        "Génesis"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué profeta fue arrojado a un foso de leones?",
+      "options": [
+        "Elías",
+        "Daniel",
+        "Jeremías"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Quién vendió su primogenitura por un plato de lentejas?",
+      "options": [
+        "Esaú",
+        "Jacob",
+        "Rubén"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Cómo se llamaba la madre del profeta Samuel?",
+      "options": [
+        "Ana",
+        "Rut",
+        "Elisabet"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Qué rey de Israel construyó el primer templo en Jerusalén?",
+      "options": [
+        "David",
+        "Saúl",
+        "Salomón"
+      ],
+      "correct": 2,
+      "tip": null
+    },
+    {
+      "text": "¿Quién fue la esposa de Isaac?",
+      "options": [
+        "Sara",
+        "Rebeca",
+        "Raquel"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué profeta hizo descender fuego del cielo en el Monte Carmelo?",
+      "options": [
+        "Elías",
+        "Eliseo",
+        "Isaías"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿De qué madera construyó Noé el arca?",
+      "options": [
+        "Cedro",
+        "Gófer",
+        "Roble"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué mujer valiente salvó a su pueblo judío de ser exterminado?",
+      "options": [
+        "Ester",
+        "Débora",
+        "María"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿A quién se le dio una túnica de muchos colores?",
+      "options": [
+        "Benjamín",
+        "José",
+        "Judá"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Quién fue el fuerte juez de Israel cuya debilidad era su cabello?",
+      "options": [
+        "Gedeón",
+        "Sansón",
+        "Jefté"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué gigante derrotó David?",
+      "options": [
+        "Goliat",
+        "Og",
+        "Anak"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿En qué río fue bautizado Jesús?",
+      "options": [
+        "Nilo",
+        "Éufrates",
+        "Jordán"
+      ],
+      "correct": 2,
+      "tip": null
+    },
+    {
+      "text": "¿Quién era el recaudador de impuestos que se subió a un árbol para ver a Jesús?",
+      "options": [
+        "Mateo",
+        "Zaqueo",
+        "Lucas"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Cuál de los apóstoles dudó de la resurrección de Jesús hasta ver sus heridas?",
+      "options": [
+        "Pedro",
+        "Tomás",
+        "Juan"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué alimento multiplicó Jesús junto con los panes para alimentar a 5000?",
+      "options": [
+        "Peces",
+        "Uvas",
+        "Aceitunas"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Quién fue el primer apóstol en caminar sobre el agua hacia Jesús?",
+      "options": [
+        "Juan",
+        "Santiago",
+        "Pedro"
+      ],
+      "correct": 2,
+      "tip": null
+    },
+    {
+      "text": "¿A quién resucitó Jesús después de estar cuatro días en la tumba?",
+      "options": [
+        "Jairo",
+        "Lázaro",
+        "Esteban"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿En qué monte fue transfigurado Jesús?",
+      "options": [
+        "Sinaí",
+        "Tabor",
+        "Carmelo"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué gobernador romano se lavó las manos en el juicio de Jesús?",
+      "options": [
+        "Herodes",
+        "César",
+        "Pilato"
+      ],
+      "correct": 2,
+      "tip": null
+    },
+    {
+      "text": "¿Quién ayudó a Jesús a cargar su cruz?",
+      "options": [
+        "Simón de Cirene",
+        "José de Arimatea",
+        "Nicodemo"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Qué libro profético del Antiguo Testamento habla más de la venida del Mesías?",
+      "options": [
+        "Ezequiel",
+        "Isaías",
+        "Oseas"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué animal soltó Noé primero para ver si las aguas habían bajado?",
+      "options": [
+        "Paloma",
+        "Cuervo",
+        "Águila"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Quién guió a los israelitas hacia la Tierra Prometida después de la muerte de Moisés?",
+      "options": [
+        "Caleb",
+        "Josué",
+        "Aarón"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué edad tenía Abraham cuando nació su hijo Isaac?",
+      "options": [
+        "90 años",
+        "100 años",
+        "120 años"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Quién traicionó a Sansón cortándole el cabello?",
+      "options": [
+        "Dalila",
+        "Jezabel",
+        "Atalía"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Cuántas plagas envió Dios sobre Egipto?",
+      "options": [
+        "7",
+        "10",
+        "12"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué instrumento tocaba David para calmar al rey Saúl?",
+      "options": [
+        "Flauta",
+        "Arpa",
+        "Trompeta"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Quién fue la bisabuela del rey David?",
+      "options": [
+        "Rut",
+        "Noemí",
+        "Rahab"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿A quién se le apareció un ángel para anunciarle que sería el padre de Juan el Bautista?",
+      "options": [
+        "Zacarías",
+        "José",
+        "Simeón"
+      ],
+      "correct": 0,
+      "tip": null
+    }
   ],
-  doctrina_convenios: [
-    { text: "¿De que está formado el espíritu?", options: ["De una materia finísima", "Por obedecer las leyes de Dios", "En Honor a Melquisedec, quien fue un gran sumo sacerdote"], correct: 0, tip: "DyC 131: 78" },
-    { text: "¿Porque a un Apóstol no se lo llama por su título de Apóstol y solo se le dice Elder?", options: ["Por lo sagrado de su llamamiento", "El sacerdocio de Melquisedec", "138 Secciones"], correct: 0, tip: "DyC 20:38" },
-    { text: "¿Traducido al Hebreo, que significado tienen las palabras URIM y TUMIN?", options: ["El sacerdocio de Melquisedec", "Luces y Perfección", "Derramar sangre inocente y negar el espíritu"], correct: 1, tip: "GGE pág. 207" },
-    { text: "¿Que sección de DyC se utiliza exclusivamente para mencionar los requisitos para la obra misional?", options: ["Un ángel", "Sección 4", "48 Presbíteros"], correct: 1, tip: null },
-    { text: "¿Quien escribió la Sección 136 de Doctrina y Convenios?", options: ["Luces y Perfección", "Brigham Young", "Preordenación"], correct: 1, tip: "Encabezamiento de DyC 136" },
-    { text: "¿Como se llama la ley de salud dada a los santos de los últimos días?", options: ["John Taylor", "Spencer W Kimball", "Palabra de sabiduría"], correct: 2, tip: "DyC 89" },
-    { text: "¿Quien escribió la declaración oficial 2 de DyC?", options: ["Wilford Woodruff", "Jesucristo", "Spencer W Kimball"], correct: 2, tip: null },
-    { text: "¿En qué ciudad de los Estados Unidos estará situada \"La Nueva Jerusalén\"?", options: ["A los 10 años, por Matusalén", "15 de Mayo de 1829", "Jackson, Misuri"], correct: 2, tip: "DyC 84:1-5" },
-    { text: "¿Quien escribió la Sección 138 de Doctrina y Convenios?", options: ["Un ángel", "Joseph F. Smith", "Buenos"], correct: 1, tip: "encabezamiento DyC 138" },
-    { text: "¿Quien escribió la declaración oficial 1 de DyC?", options: ["Buenos", "Wilford Woodruff", "Juan el Bautista"], correct: 1, tip: null },
-    { text: "¿Indica por lo menos tres deberes de un Presbítero?", options: ["El Poder de Sellamiento", "El sacerdocio de Melquisedec", "Bautizar, Bendecir la santa cena y conferir el sacerdocio"], correct: 2, tip: "DyC 20:46-48" },
-    { text: "¿Específicamente, porque recibimos Bendiciones?", options: ["John Taylor", "Por obedecer las leyes de Dios", "En nuestra mente"], correct: 1, tip: "DyC 130:20-21" },
-    { text: "¿Quienes heredaran el Reino Telestial?", options: ["Los que no recibieron el evangelio de Jesucristo.", "12 Diáconos", "138 Secciones"], correct: 0, tip: "DyC 76:81-89" },
-    { text: "¿Cuál fue el segundo Elder, ordenado en esta dispensación?", options: ["El nombre de Jesucristo", "Oliverio Cowdery", "4 veces"], correct: 1, tip: "DyC 76:81-109" },
-    { text: "¿Donde se encuentra escrito el testimonio de los doce apóstoles acerca de Doctrina y Convenios?", options: ["Libros sagrados del pueblo Judío que no se incluyeron en la Biblia", "Introducción de Doctrina y Convenios", "Por obedecer las leyes de Dios"], correct: 1, tip: null },
-    { text: "¿Quienes heredaran el Reino Terrestre?", options: ["Se le extiende la mano y se le pide la suya para estrecharla", "De una materia finísima", "Las personas Honorables de la Tierra que no fueron valientes en el testimonio de Jesús"], correct: 2, tip: "DyC 76:71-79" },
-    { text: "¿Quienes heredaran el Reino Celestial?", options: ["Los Justos y fieles en el testimonio de Jesús y sellados por el espíritu de la promesa", "En recibir todas las ordenanzas esenciales del templo", ": Matrimonio en el templo"], correct: 0, tip: "DyC 131:1-2" },
-    { text: "¿A quien se le llama \"El Anciano de días\"?", options: ["Buenos", "Luces y Perfección", "Adán"], correct: 2, tip: "DyC 27:11" },
-    { text: "¿Que poder recibieron José Smith y Oliverio Cowdery en una visión en el Templo de Kirtland?", options: ["Brigham Young", "El Poder de Sellamiento", "En nuestra mente"], correct: 1, tip: "DyC 110:11-16, GEE pág. 117" },
-    { text: "¿Quienes son los llamados hijos de perdición?", options: ["Los Justos y fieles en el testimonio de Jesús y sellados por el espíritu de la promesa", "Su Palabra", "Los que después de haber recibido el espíritu santo de la promesa, lo negaron"], correct: 2, tip: "DyC 76:32-38" },
-    { text: "¿Que dijo el Señor acerca de donde tenemos que estudiarlo antes de preguntarle?", options: ["Palabra de sabiduría", "En nuestra mente", "23 de Diciembre de 1805"], correct: 1, tip: "DyC 9:8-9" },
-    { text: "¿En que consiste la Investidura?", options: ["En recibir todas las ordenanzas esenciales del templo", "Oliverio Cowdery", "Preordenación"], correct: 0, tip: "DyC 38:32-38" },
-    { text: "¿Con que otro nombre se le conoce al sacerdocio de Aarón?", options: ["Los que después de haber recibido el espíritu santo de la promesa, lo negaron", "Derramar sangre inocente y negar el espíritu", "Levítico"], correct: 2, tip: "DyC 107:6" },
-    { text: "¿Como se llamaba el libro de las 116 páginas perdidas por Martin Harris?", options: ["Luces y Perfección", "Tres grados", "El Libro de Lehi"], correct: 2, tip: "Encabezamiento DyC 3" },
-    { text: "¿En que sección de Doctrina y Convenios se menciona a la Palabra de Sabiduría?", options: ["Preordenación", "Sección 89", "El cuerpo y la sangre derramada por Jesucristo por nosotros"], correct: 1, tip: "DyC 89:1-6" },
-    { text: "¿Que significa SION?", options: ["Al sacerdocio de Melquisedec", "Oliverio Cowdery", "Puros de Corazón"], correct: 2, tip: "DyC 97:21 , 38:4" },
-    { text: "¿El Primer consolador es el espíritu Santo, quien es el segundo consolador?", options: ["Jesucristo", "Oliverio Cowdery", "Adán"], correct: 0, tip: "DyC 21:9, Juan 14: 26-27" },
-    { text: "¿De cuantas secciones está compuesto Doctrina y Convenios?", options: ["24 Maestros", "48 Presbíteros", "138 Secciones"], correct: 2, tip: null },
-    { text: "¿Cuál es el máximo de todos los dones que Dios da a los hombres?", options: ["La Vida Eterna", "Elder, Sumo Sacerdote, Patriarca, Setenta y Apóstol", "Sección 89"], correct: 0, tip: "DyC 14:7" },
-    { text: "¿Cuantos grados de gloria hay?", options: ["Tres grados", "48 Presbíteros", "Sección 89"], correct: 0, tip: "DyC 76:81-109" },
-    { text: "¿De qué habla la Declaración Oficial No. 2 de DyC?", options: ["Dos", "Se le extiende la mano y se le pide la suya para estrecharla", "Del Sacerdocio a las personas de color"], correct: 2, tip: null },
-    { text: "¿Cuáles son los pecados imperdonables?", options: ["Derramar sangre inocente y negar el espíritu", "El sacerdocio de Melquisedec", "Levítico"], correct: 0, tip: "DyC 132:26-27" },
-    { text: "¿A causa de su fidelidad en la vida pre-existente, el Señor escogió a algunos a ser líderes en esta vida antes de nacer. Como se llama a esto?", options: ["Preordenación", "Brigham Young", "Jackson, Misuri"], correct: 0, tip: "DyC 138:55-56, GEE pág. 168" },
-    { text: "¿De qué habla la Declaración Oficial No. 1 de DyC?", options: ["Serán ángeles ministrantes", "La Poligamia", "El conocimiento de las cosas como son, como eran y con han de ser"], correct: 1, tip: null },
-    { text: "¿Que le confirieron a José Smith: Pedro, Santiago y Juan?", options: ["Sección 89", "El sacerdocio de Melquisedec", "Juan el bautista"], correct: 1, tip: "DyC 27:12" },
-    { text: "¿Quien escribió la Sección 135 de Doctrina y Convenios?", options: ["Un ángel", "La Vida Eterna", "John Taylor"], correct: 2, tip: "Encabezamiento DyC 135" },
-    { text: "¿Con que nombre originalmente se publicó Doctrina y Convenios?", options: ["Su Palabra", "23 de Diciembre de 1805", "El Libro de los mandamientos"], correct: 2, tip: "GEE pág. 123" },
-    { text: "¿A qué edad y por quien fue ordenado Noé, al sacerdocio de Melquisedec?", options: ["135,136 y 138", "A los 10 años, por Matusalén", "12 Diáconos"], correct: 1, tip: "DyC 107:52" },
-    { text: "¿Con que adjetivo califica Nefi a sus padres, cuando indica que nació de ellos?", options: ["Buenos", "4 veces", "48 Presbíteros"], correct: 0, tip: "1 Nefi 1:1" },
-    { text: "¿De cuantos miembros se compone un quorum de Presbíteros?", options: ["48 Presbíteros", "12 Diáconos", "96 Elderes"], correct: 0, tip: "DyC 20" },
-    { text: "¿Como se llamaba el hombre que perdió 116 paginas traducidas del Libro de Mormón?", options: ["Joseph F. Smith", "John Taylor", "Martin Harris"], correct: 2, tip: "Manual de Inst. Historia de la Iglesia pág. 52" },
-    { text: "¿Cuál será el estado de aquellas personas que no sean selladas dentro de un matrimonio?", options: ["Serán ángeles ministrantes", "Al sacerdocio de Melquisedec", "Levítico"], correct: 0, tip: "DyC 93:24" },
-    { text: "¿De cuantos miembros se compone un quorum de Maestros?", options: ["15 de Mayo de 1829", "96 Elderes", "24 Maestros"], correct: 2, tip: "DyC 20" },
-    { text: "¿Como enseño el Señor que podemos reconocer si un espíritu o ángel es un mensajero de Dios o no?", options: ["Se le extiende la mano y se le pide la suya para estrecharla", "Jesucristo", "El Libro de los mandamientos"], correct: 0, tip: "DyC 129" },
-    { text: "¿De cuantos miembros se compone un Quorum de Diáconos?", options: ["4 veces", "12 Diáconos", "23 de Diciembre de 1805"], correct: 1, tip: "DyC 20" },
-    { text: "¿Que es la verdad?", options: ["La perla de Gran Precio", "El conocimiento de las cosas como son, como eran y con han de ser", "Por vía de salutación"], correct: 1, tip: "DyC 93:24" },
-    { text: "¿De cuantos miembros se compone un quorum de Elderes?", options: ["96 Elderes", "Sección 89", "4 veces"], correct: 0, tip: "DyC 20" },
-    { text: "¿En qué fecha nació el profeta José Smith?", options: ["23 de Diciembre de 1805", "Sección 89", "A los 10 años, por Matusalén"], correct: 0, tip: "J S Historia 1" },
-    { text: "¿En qué fecha se restauró el sacerdocio de Aarón?", options: ["A los 10 años, por Matusalén", "4 veces", "15 de Mayo de 1829"], correct: 2, tip: "DyC 13" },
-    { text: "¿A que se denomina \"El Juramento inquebrantable\"?", options: ["Derramar sangre inocente y negar el espíritu", "Al sacerdocio de Melquisedec", "Palabra de sabiduría"], correct: 1, tip: "DyC 84:39-40" },
-    { text: "¿Quien confirió el sacerdocio Aarónico a José Smith?", options: ["Tres grados", "Juan el bautista", "La Vida Eterna"], correct: 1, tip: "DyC 13" },
-    { text: "¿Que profeta del Libro de Mormón, Profetizo desde lo alto de una muralla?", options: ["Revelaciones dadas al Profeta José Smith", "Samuel el Lamanita", "Al sacerdocio de Melquisedec"], correct: 1, tip: "Hel. 13-16" },
-    { text: "¿Cuáles son los oficios del Sacerdocio de Melquisedec?", options: ["De una materia finísima", "El Poder de Sellamiento", "Elder, Sumo Sacerdote, Patriarca, Setenta y Apóstol"], correct: 2, tip: "DyC 107" },
-    { text: "¿Que simboliza \"La Santa Cena\"?", options: ["El cuerpo y la sangre derramada por Jesucristo por nosotros", "La Vida Eterna", "Levítico"], correct: 0, tip: "DyC 27:2" },
-    { text: "¿De donde viene el nombre del Sacerdocio de Melquisedec?", options: ["Derramar sangre inocente y negar el espíritu", "Spencer W Kimball", "En Honor a Melquisedec, quien fue un gran sumo sacerdote"], correct: 2, tip: "DyC 107:2-4" },
-    { text: "¿A que llamamos \"Libros Apócrifos\"?", options: ["Libros sagrados del pueblo Judío que no se incluyeron en la Biblia", "Adán", "La ignorancia"], correct: 0, tip: "DyC 91:1-3;4-6" },
-    { text: "¿Que dice el Señor, que debemos obtener, antes de enseñar su evangelio?", options: ["Su Palabra", "4 veces", ": Matrimonio en el templo"], correct: 0, tip: "DyC 11:21" },
-    { text: "¿A que Ordenanza se le llama \"El nuevo y sempiterno convenio\"?", options: [": Matrimonio en el templo", "Por vía de salutación", "En nuestra mente"], correct: 0, tip: "DyC 66:2" },
-    { text: "¿Como se llamaba el Profeta que fue lleno del espíritu el vientre de su madre y recibió el sacerdocio los 8 años?", options: ["Juan el Bautista", "El Ministerio de Ángeles", "Adán"], correct: 0, tip: "DyC 84:27-28" },
-    { text: "¿Quien bautizo y ordeno al sacerdocio a Juan el Bautista?", options: ["La Poligamia", "Un ángel", "El Ministerio de Ángeles"], correct: 1, tip: "Moises 6:64-66" },
-    { text: "Complete la frase: \"Es imposible que un hombre pueda salvarse en...\"?", options: ["Su Palabra", "John Taylor", "La ignorancia"], correct: 2, tip: "DyC 131:6" },
-    { text: "¿La Palabra de sabiduría no fue dada por vía de Mandamiento, por que vía fue dada?", options: ["Por vía de salutación", "El sacerdocio de Melquisedec", "Del Sacerdocio a las personas de color"], correct: 0, tip: "DyC 89:2" },
-    { text: "¿Cuáles son las secciones de D y C que no fueron escritas por José Smith?", options: ["Bautizar, Bendecir la santa cena y conferir el sacerdocio", "Adán", "135,136 y 138"], correct: 2, tip: "Encabezamientos de cada sección" },
-    { text: "¿El Nombre de quien tomamos sobre nosotros con la ordenanza del bautismo?", options: ["Jesucristo", "Juan el Bautista", "El nombre de Jesucristo"], correct: 2, tip: "DyC 20, GEE pag. 187" },
-    { text: "¿Que contiene el Libro de Doctrina y Convenios?", options: ["Revelaciones dadas al Profeta José Smith", "El cuerpo y la sangre derramada por Jesucristo por nosotros", "Joseph F. Smith"], correct: 0, tip: "Introd. DyC" },
-    { text: "¿Cuantas veces visito el Ángel Moroni a José Smith la primera vez, antes de hacerle conocer donde estaban las planchas de oro?", options: ["96 Elderes", "4 veces", "23 de Diciembre de 1805"], correct: 1, tip: "3 en la noche y 1 en la mañana H de JS" },
-    { text: "¿Los libros de Moisés y Abraham de que libro canónico de la Iglesia son parte?", options: ["El cuerpo y la sangre derramada por Jesucristo por nosotros", "La perla de Gran Precio", "Jesucristo"], correct: 1, tip: null },
-    { text: "¿Las llaves de que ministerio tiene el Sacerdocio Aarónico?", options: ["Por vía de salutación", "15 de Mayo de 1829", "El Ministerio de Ángeles"], correct: 2, tip: "DyC 13" },
-    { text: "¿Que es ADAN ONDI AMAN?", options: ["Al sacerdocio de Melquisedec", "Lugar donde Adán vendrá antes de la segunda venida", "Buenos"], correct: 1, tip: "DyC 132:15-17" },
-    { text: "¿Cuantas declaraciones Oficiales tiene Doctrina y Convenios?", options: ["Dos", "A los 10 años, por Matusalén", "96 Elderes"], correct: 0, tip: null },
+  "doctrina_convenios": [
+    {
+      "text": "¿En qué año recibió José Smith la Primera Visión?",
+      "options": [
+        "1805",
+        "1820",
+        "1830"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Quién fue el ángel que visitó a José Smith en su cuarto?",
+      "options": [
+        "Gabriel",
+        "Moroni",
+        "Miguel"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Cuál es el lema de la Sociedad de Socorro?",
+      "options": [
+        "Servir con amor",
+        "La caridad nunca deja de ser",
+        "Fiel a la fe"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿En qué libro de la Perla de Gran Precio se narra la vida premortal?",
+      "options": [
+        "Abraham",
+        "Moisés",
+        "José Smith—Mateo"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Con qué frecuencia se lleva a cabo la Conferencia General?",
+      "options": [
+        "Cada año",
+        "Cada seis meses",
+        "Cada dos años"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué estrella es la más cercana al trono de Dios según Abraham?",
+      "options": [
+        "El Sol",
+        "Kólob",
+        "Olish"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Quién restauró el Sacerdocio Aarónico?",
+      "options": [
+        "Juan el Bautista",
+        "Pedro",
+        "Elías"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿En qué sección de Doctrina y Convenios se encuentra la \"Palabra de Sabiduría\"?",
+      "options": [
+        "Sección 76",
+        "Sección 88",
+        "Sección 89"
+      ],
+      "correct": 2,
+      "tip": null
+    },
+    {
+      "text": "¿Quién fue el primer escriba de José en la traducción de las planchas?",
+      "options": [
+        "Martin Harris",
+        "Oliver Cowdery",
+        "Sidney Rigdon"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Qué sección contiene las oraciones sacramentales?",
+      "options": [
+        "Sección 13",
+        "Sección 20",
+        "Sección 25"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué profeta del Antiguo Testamento aparece en Moisés 7 con su ciudad?",
+      "options": [
+        "Noé",
+        "Enoc",
+        "Adán"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué sección de Doctrina y Convenios describe los tres grados de gloria?",
+      "options": [
+        "Sección 20",
+        "Sección 76",
+        "Sección 107"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Cómo se llama el lugar donde Adán bendijo a su posteridad?",
+      "options": [
+        "Adam-ondi-Ahmán",
+        "El Jardín del Edén",
+        "Cumorah"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Quién restauró las llaves del recogimiento de Israel en Kirtland?",
+      "options": [
+        "Elías",
+        "Moisés",
+        "Abraham"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Quién es el mensajero celestial que aparece en la cima de muchos templos?",
+      "options": [
+        "Gabriel",
+        "Miguel",
+        "Moroni"
+      ],
+      "correct": 2,
+      "tip": null
+    },
+    {
+      "text": "¿Qué significa el nombre \"Sion\"?",
+      "options": [
+        "Tierra de paz",
+        "Los puros de corazón",
+        "Ciudad de oro"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Cómo se llama el grupo de 12 hombres que testifican de Cristo en todo el mundo?",
+      "options": [
+        "Los Setenta",
+        "El Obispado Presidente",
+        "El Cuórum de los Doce Apóstoles"
+      ],
+      "correct": 2,
+      "tip": null
+    },
+    {
+      "text": "¿Qué libro de la Perla de Gran Precio contiene los Artículos de Fe?",
+      "options": [
+        "José Smith—Historia",
+        "Abraham",
+        "Moisés"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Quién escribió originalmente los Artículos de Fe?",
+      "options": [
+        "Brigham Young",
+        "José Smith",
+        "John Taylor"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué sección de Doctrina y Convenios se escribió en la cárcel de Liberty?",
+      "options": [
+        "Sección 109",
+        "Sección 110",
+        "Sección 121"
+      ],
+      "correct": 2,
+      "tip": null
+    },
+    {
+      "text": "¿Quién intentó sacrificar a Abraham sobre un altar?",
+      "options": [
+        "El Faraón de Egipto",
+        "El sacerdote de Elkenah",
+        "Los caldeos"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿En qué ciudad se organizó la Iglesia el 6 de abril de 1830?",
+      "options": [
+        "Fayette, N.Y.",
+        "Kirtland, Ohio",
+        "Nauvoo, Illinois"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Qué nombre se le da a la visión de la Segunda Venida en la Perla de Gran Precio?",
+      "options": [
+        "José Smith—Mateo",
+        "Revelaciones",
+        "El Fin de los Tiempos"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Quiénes restauraron el Sacerdocio de Melquisedec?",
+      "options": [
+        "Adán y Eva",
+        "Pedro, Santiago y Juan",
+        "Los Tres Testigos"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué sección se conoce como \"El Prefacio del Señor\"?",
+      "options": [
+        "Sección 1",
+        "Sección 2",
+        "Sección 133"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Quién fue la esposa de José Smith mencionada en Doctrina y Convenios 25?",
+      "options": [
+        "Eliza R. Snow",
+        "Emma Smith",
+        "Lucy Mack Smith"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué sección enseña que el matrimonio es por la eternidad?",
+      "options": [
+        "Sección 89",
+        "Sección 131",
+        "Sección 132"
+      ],
+      "correct": 2,
+      "tip": null
+    },
+    {
+      "text": "¿A quiénes se aparecieron Moisés, Elías y Elías el Profeta en 1836?",
+      "options": [
+        "A José Smith y Oliver Cowdery",
+        "A los Doce Apóstoles",
+        "A Martin Harris"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Cuál es el reino cuya gloria se compara con la luna?",
+      "options": [
+        "Reino Celestial",
+        "Reino Terrestre",
+        "Reino Telestial"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿De qué país originaron las momias y los papiros comprados por la Iglesia?",
+      "options": [
+        "Israel",
+        "Grecia",
+        "Egipto"
+      ],
+      "correct": 2,
+      "tip": null
+    },
+    {
+      "text": "¿Quién fue el ángel que restauró las llaves para sellar?",
+      "options": [
+        "Elías el Profeta",
+        "Moroni",
+        "Gabriel"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Qué se requiere para entrar al grado más alto del Reino Celestial?",
+      "options": [
+        "Ser misionero",
+        "El nuevo y sempiterno convenio del matrimonio",
+        "Saber griego"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Quién bautizó a José Smith?",
+      "options": [
+        "Juan Bautista",
+        "Oliver Cowdery",
+        "Hyrum Smith"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿A quién le entregó el ángel Moroni las planchas de oro?",
+      "options": [
+        "A Oliver Cowdery",
+        "A José Smith",
+        "A David Whitmer"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué sección es una \"hoja de olivo\" de paz para los Santos?",
+      "options": [
+        "Sección 88",
+        "Sección 4",
+        "Sección 59"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Cuál es el \"gran y último mandamiento\" en Doctrina y Convenios 19?",
+      "options": [
+        "Bautizarse",
+        "Arrepentirse",
+        "No mentir"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué sección habla sobre el deber de los padres hacia sus hijos?",
+      "options": [
+        "Sección 68",
+        "Sección 1",
+        "Sección 20"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Quién fue el mártir mencionado junto a José Smith en la sección 135?",
+      "options": [
+        "Samuel Smith",
+        "Hyrum Smith",
+        "William Smith"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Cómo se llama el cerro donde José Smith encontró las planchas?",
+      "options": [
+        "Sinaí",
+        "Cumorah",
+        "Olivete"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué oración comienza con \"Oh Dios, ¿en dónde estás?\"?",
+      "options": [
+        "La de Moisés en el Mar Rojo",
+        "La de José Smith en la cárcel",
+        "El Padre Nuestro"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Cómo se llamaba la mujer que se convirtió en estatua de sal?",
+      "options": [
+        "La esposa de Lot",
+        "Rut",
+        "Noemí"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Qué sección es conocida como la \"Ley de la Iglesia\"?",
+      "options": [
+        "Sección 20",
+        "Sección 42",
+        "Sección 89"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿A quién se le dio la revelación de la Palabra de Sabiduría?",
+      "options": [
+        "Brigham Young",
+        "José Smith",
+        "John Taylor"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué lugar fue designado como el centro de la ciudad de Sion (La Nueva Jerusalén)?",
+      "options": [
+        "Nauvoo, Illinois",
+        "Independence, Misuri",
+        "Kirtland, Ohio"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Quién fue el primer obispo de la Iglesia?",
+      "options": [
+        "Newel K. Whitney",
+        "Edward Partridge",
+        "Oliverio Cowdery"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿En qué cárcel fue asesinado José Smith?",
+      "options": [
+        "Cárcel de Liberty",
+        "Cárcel de Carthage",
+        "Cárcel de Richmond"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Quién dedicó el Templo de Kirtland?",
+      "options": [
+        "José Smith",
+        "Brigham Young",
+        "Wilford Woodruff"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Qué sección habla detalladamente sobre el sacerdocio y sus oficios?",
+      "options": [
+        "Sección 76",
+        "Sección 107",
+        "Sección 121"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué profeta del Antiguo Testamento apareció en el Templo de Kirtland para restaurar las llaves del poder sellador?",
+      "options": [
+        "Moisés",
+        "Elías",
+        "Elías el Profeta"
+      ],
+      "correct": 2,
+      "tip": null
+    },
+    {
+      "text": "¿Qué sección fue revelada como consuelo a José Smith mientras estaba en la cárcel de Liberty?",
+      "options": [
+        "Sección 109",
+        "Sección 121",
+        "Sección 136"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Quién fue el segundo Presidente de la Iglesia?",
+      "options": [
+        "John Taylor",
+        "Brigham Young",
+        "Wilford Woodruff"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué sección de D&C es la revelación sobre la gloria de los reinos?",
+      "options": [
+        "Sección 88",
+        "Sección 76",
+        "Sección 132"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿En qué ciudad se organizó el primer quórum de los Doce Apóstoles en esta dispensación?",
+      "options": [
+        "Nauvoo",
+        "Kirtland",
+        "Fayette"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué persona fue amonestada en D&C 25 para \"desechar las cosas de este mundo y buscar las de un mundo mejor\"?",
+      "options": [
+        "Emma Smith",
+        "Lucy Mack Smith",
+        "Eliza R. Snow"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Qué revelación trata sobre el bautismo por los muertos y fue escrita desde Nauvoo?",
+      "options": [
+        "Sección 110",
+        "Sección 128",
+        "Sección 137"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Cuál es la última sección de Doctrina y Convenios (Declaración Oficial 2)?",
+      "options": [
+        "Pluralidad de esposas",
+        "El sacerdocio para todos los varones dignos",
+        "El Manifiesto"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Quién perdió las 116 páginas del manuscrito original del Libro de Mormón?",
+      "options": [
+        "Oliverio Cowdery",
+        "Martin Harris",
+        "David Whitmer"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿En qué estado se encontraba la cárcel de Carthage?",
+      "options": [
+        "Illinois",
+        "Misuri",
+        "Ohio"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Qué sección contiene la oración dedicatoria del Templo de Kirtland?",
+      "options": [
+        "Sección 109",
+        "Sección 110",
+        "Sección 124"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿A quién se refiere D&C como el \"portavoz\" de José Smith al principio?",
+      "options": [
+        "Sidney Rigdon",
+        "Oliverio Cowdery",
+        "Hyrum Smith"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Qué edad tenía José Smith cuando fue martirizado?",
+      "options": [
+        "33",
+        "38",
+        "44"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué profeta del Libro de Mormón apareció en el Templo de Kirtland?",
+      "options": [
+        "Ninguno (fueron Moisés, Elías, Elías el Profeta)",
+        "Moroni",
+        "Nefi"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Qué revelación es conocida como \"El Canto de Redención\"?",
+      "options": [
+        "Sección 133",
+        "Sección 76",
+        "Sección 88"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Quién acompañó a José Smith al martirio en Carthage además de Hyrum?",
+      "options": [
+        "John Taylor y Willard Richards",
+        "Brigham Young y Heber C. Kimball",
+        "Parley P. Pratt"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Qué sección explica qué sucede con los niños que mueren antes de la edad de responsabilidad?",
+      "options": [
+        "Sección 137",
+        "Sección 138",
+        "Sección 76"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Quién recibió la revelación sobre la redención de los muertos (Visión del mundo de los espíritus)?",
+      "options": [
+        "José Smith",
+        "Joseph F. Smith",
+        "Gordon B. Hinckley"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué sección establece el principio del diezmo?",
+      "options": [
+        "Sección 89",
+        "Sección 119",
+        "Sección 120"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué lugar fue conocido brevemente como \"Zion's Camp\" (El Campo de Sion)?",
+      "options": [
+        "Nauvoo",
+        "La expedición a Misuri",
+        "Kirtland"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué sección detalla la organización del Cuórum de los Setenta?",
+      "options": [
+        "Sección 20",
+        "Sección 107",
+        "Sección 124"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Quién fue llamado como el primer Patriarca de la Iglesia?",
+      "options": [
+        "Joseph Smith Sr.",
+        "Hyrum Smith",
+        "William Smith"
+      ],
+      "correct": 0,
+      "tip": null
+    }
   ],
-  libro_mormon: [
-    { text: "¿Como se llamaba el hombre que salió de Jerusalén hacia la Tierra prometida, algunos años después de Lehi y su Familia?", options: ["Mulek", "Alma", "Abundancia"], correct: 0, tip: "hijo de Sedequias – Hel. 8;21,6:10" },
-    { text: "¿Que es la muerte física?", options: ["1.021 años", "La separación del cuerpo y el espíritu", "Los Gentiles"], correct: 1, tip: "Alma 11:45" },
-    { text: "¿En el Libro de Mormón, que parte de nuestro cuerpo, dijo Jesucristo que era la Luz de nuestro cuerpo?", options: ["600 años", "Nuestros ojos", "El Amor de Dios"], correct: 1, tip: "3 Ne 13:22" },
-    { text: "¿En su viaje a las Américas, al llegar al Mar Rojo, con que comparo Lehi a sus hijos, Laman y Lemuel?", options: ["Dos días y una noche de claridad continua", "63 Años", "Laman con un rio y Lemuel con un valle"], correct: 2, tip: "1 Ne 2:9-10" },
-    { text: "¿Cuantos años antes de Cristo, salió Lehi y su familia hacia el desierto?", options: ["600 años", "15 libros", "2 Nefi 4"], correct: 0, tip: null },
-    { text: "¿Como se llamaba el sacerdote que huyo después de creer la palabra del profeta Abinadi?", options: ["Alma", "Cuatro clases", "Abeja obrera"], correct: 0, tip: null },
-    { text: "¿De cuantos libros está compuesto el Libro de Mormón?", options: ["15 libros", "14 años", "1.021 años"], correct: 0, tip: "Índice del L de M" },
-    { text: "¿Que representaban los \"Vapores de tinieblas\" en el sueño de Lehî?", options: ["Nefi", "Que sacaría a luz el Libro de Mormón", "Las tentaciones del Diablo"], correct: 2, tip: "1 Nefi 12:7" },
-    { text: "¿Como se llamaba el segundo hijo que Lehi y su esposa engendraron en el Desierto?", options: ["El Amor de Dios", "Nuestros ojos", "José"], correct: 2, tip: "1 Ne 18:7" },
-    { text: "¿Que profeta Lamanita amonesto al arrepentimiento desde las murallas a los Nefitas?", options: ["Cuatro clases", "Samuel el Lamanita", "José"], correct: 1, tip: "Helaman 16:2" },
-    { text: "¿Cual fueron los tres primeros testigos del Libro de Mormón?", options: ["Laman con un rio y Lemuel con un valle", "La facultad de escoger libremente del hombre", "Martin Harris, Oliver Cowdery y David Witmer"], correct: 2, tip: "Introd. Del L de M" },
-    { text: "¿A qué edad Murió el Rey Mosiah?", options: ["1830", "2 Nefi 4", "63 Años"], correct: 2, tip: "Mosiah 29:46" },
-    { text: "¿De que tribu eran descendientes Lehi y Laban?", options: ["Abundancia", "José", "Blanco"], correct: 1, tip: "1 Ne 5:14-16" },
-    { text: "¿Como que, lo califica El Rey Benjamín, al Hombre Natural?", options: ["Nefi", "Enemigo de Dios", "Mar Rojo"], correct: 1, tip: "Mosiah 3:19" },
-    { text: "¿En qué libro del Libro de Mormón se encuentra escrito el salmo de Nefi?", options: ["Laban", "2 Nefi 4", "Blanco"], correct: 1, tip: null },
-    { text: "¿De qué color era el fruto dulce y apetecible, que se describe en el sueño de Lehi?", options: ["Blanco", "Laman con un rio y Lemuel con un valle", "El Rey Benjamín"], correct: 0, tip: "1 Nefi 8:11" },
-    { text: "¿Cuál era el nombre de grupo de Lamanitas que se negó a tomar las armas contra sus hermanos?", options: ["Los Gentiles", "El Libro de Mormón", "Los Antinefi-Lehitas"], correct: 2, tip: "Alma 24:5-6" },
-    { text: "¿Al momento de la crucifixión de Jesucristo, en la Américas hubieron, truenos y relámpagos, cuanto tiempo duraron?", options: ["21 de Septiembre de 1823", "3 Horas", "15 libros"], correct: 1, tip: "3 Nefi 8:19" },
-    { text: "¿Como revelación de porque Jerusalén sería destruida, hacia dónde mandó el Señor salir a Lehi y su familia?", options: ["Desierto", "Alma", "4 años"], correct: 0, tip: "1 Ne 2:2" },
-    { text: "¿Cuanto tiempo tardaron en cruzar el mar, Lehi y su familia?", options: ["1.021 años", "4 años", "1 año"], correct: 2, tip: "Índice del tiempo L de M" },
-    { text: "¿Como se llaman las planchas que componen, las planchas de Nefi?", options: ["Los Gentiles", "Planchas mayores y menores", "Mulek"], correct: 1, tip: "Introd. Del L de M" },
-    { text: "¿El Rey Benjamín, le encargo todos los asuntos del reino a su hijo Mosiah y también la espada de quién?", options: ["Laban", "Libertad", "Manases"], correct: 0, tip: "Mosiah 1:15-16" },
-    { text: "¿Que tiempo abarca exactamente la historia del Libro de Mormón, desde la salida de Jerusalén de Lehi, hasta la despedida de Moroni?", options: ["Libertad", "1 año", "1.021 años"], correct: 2, tip: "600 AC y 421 años DC, sin contar la época de Eter" },
-    { text: "¿Por qué el Libro de Mormón lleva ese nombre?", options: ["En honor al profeta que recopilo todos los escritos de los antiguos profetas de las Américas.", "15 años", "El Amor de Dios"], correct: 0, tip: "Introd. Al libro de Mormón" },
-    { text: "¿Cuantos años tenía Mormón cuando recibió la asignación de cuidar las planchas de Nefi y escribir los hechos de su pueblo?", options: ["10 años", "15 años", "21 de Septiembre de 1823"], correct: 0, tip: "Mormón 1:2-4" },
-    { text: "¿Que mando hacer con el Profeta Abinadi, en su primer juicio el Rey Noé?", options: ["La facultad de escoger libremente del hombre", "Abeja obrera", "Encarcelado"], correct: 2, tip: "Mosiah 12:17" },
-    { text: "¿Como se llamaba el líder de las combinaciones secretas que se menciona en 3 Nefi del Libro de Mormón?", options: ["Jacob", "El Libro de Mormón", "Jacob"], correct: 0, tip: "3 Nefi 7:9" },
-    { text: "¿A que se le llama \"El Palo de José\"?", options: ["El Libro de Mormón", "Laman con un rio y Lemuel con un valle", "Moroni"], correct: 0, tip: null },
-    { text: "¿Quienes eran las otras ovejas de las cuales hablo Jesús en Palestina?", options: ["El Ministerio personal de Jesucristo entre los Nefitas", "En honor al profeta que recopilo todos los escritos de los antiguos profetas de las Américas.", "Los habitantes de América, Nefitas, Lamanitas, etc."], correct: 2, tip: "3 Ne 11" },
-    { text: "¿Cuantas clases de planchas se mencionan en el Libro de Mormón?", options: ["Cuatro clases", "3 Horas", "21 de Septiembre de 1823"], correct: 0, tip: "Planchas de Nefi, de Mormón, de Éter y de Bronce" },
-    { text: "¿De los dos mil jóvenes guerreros de Helaman cuantos murieron en Batalla?", options: ["Ninguno", "15 años", "8 años"], correct: 0, tip: "Alma 56:56" },
-    { text: "¿Jacob, Jarom, Enos y Omni, a que libro canónico de la iglesia pertenecen?", options: ["La separación del cuerpo y el espíritu", "Una especie de brújula", "El Libro de Mormón"], correct: 2, tip: "Índice del L de M" },
-    { text: "¿Que es el albedrio moral del Hombre?", options: ["Lemuel", "La facultad de escoger libremente del hombre", "Ninguno"], correct: 1, tip: "2 Nefi 2:27" },
-    { text: "¿Que profeta hablo con Jesucristo, un día antes de que este nazca y venga al mundo como El Salvador?", options: ["El Ministerio personal de Jesucristo entre los Nefitas", "Nefi", "Abundancia"], correct: 1, tip: "3 Ne 1:10-13" },
-    { text: "¿Quien era el Profeta del Libro de Mormón, que clamo al Señor en oración todo el día y aun en la noche?", options: ["Con el Hierro", "José", "Enos – Hijo de Jacob"], correct: 2, tip: "Enos 1:4" },
-    { text: "¿Cuanto tiempo permanecieron Lehi y su familia en el desierto?", options: ["8 años", "2 Nefi 4", "21 de Septiembre de 1823"], correct: 0, tip: "1 Ne 17:4" },
-    { text: "¿El Senine, el Seon y el Onti, son monedas que se usaban antiguamente, en que libro canónico se mencionan?", options: [": Libro de Mormón", "Son cinco de los ocho testigos del Libro de Mormón", "Abundancia"], correct: 0, tip: "Alma 11:5" },
-    { text: "¿Con que metal se compara al evangelio, en el Libro de Mormón?", options: ["Con el Hierro", "1830", "Amor puro de Cristo"], correct: 0, tip: "1 Ne 15:23-24" },
-    { text: "¿Cuál es la edad a la que se le llama uso de razón y los niños pueden bautizarse?", options: ["15 años", "8 años", "3 Horas"], correct: 1, tip: "Moroni 8:10-12" },
-    { text: "¿El Pentateuco, Los escritos de los profetas Isaías y otros y la genealogía de Lehi, de qué tipo de planchas eran parte?", options: ["10 años", "Las planchas de Bronce", "Blanco"], correct: 1, tip: "Introd, L de M pág. XIII" },
-    { text: "¿Como se llamaba el Rey que construyo una torre, para hablar a su pueblo?", options: ["El Amor de Dios", "Encarcelado", "El Rey Benjamín"], correct: 2, tip: "Mosiah 2:7" },
-    { text: "¿Quien fue el que entro a hablar con Laban la primera vez que fueron a pedirle las planchas de bronce?", options: ["Laman", "Mar Rojo", "Nefi"], correct: 0, tip: "1 Nefi 3:11" },
-    { text: "¿Qué significado tiene en el Libro de Mormón, la palabra DESERET?", options: ["10 años", "Abeja obrera", "José"], correct: 1, tip: "Éter 2:3" },
-    { text: "¿En qué año salió impreso el primer ejemplar del Libro de Mormón?", options: ["63 Años", "1830", "1 año"], correct: 1, tip: "DyC 19" },
-    { text: "¿Como se llamaba El profeta que entrego las planchas a José Smith?", options: ["Los Antinefi-Lehitas", "Moroni", "El Amor de Dios"], correct: 1, tip: "J S Historia pág. 58" },
-    { text: "¿Cuantos años tuvo que esperar José Smith para sacar las planchas a luz?", options: ["8 años", "4 años", "600 años"], correct: 1, tip: "J S Historia" },
-    { text: "¿Que es la Caridad?", options: ["Enemigo de Dios", "El Ministerio personal de Jesucristo entre los Nefitas", "Amor puro de Cristo"], correct: 2, tip: "Moroni 7:47" },
-    { text: "¿De acuerdo al sueño de Lehi, que significado tenía el gran edificio lleno de gente?", options: ["El Orgullo del Mundo", "15 años", "Abundancia"], correct: 0, tip: "1 Ne 12:18" },
-    { text: "¿De quien era descendiente Amulek?", options: ["Manases", "José", "Encarcelado"], correct: 0, tip: "Alma 10: 1-3" },
-    { text: "¿En qué fecha recibió José Smith la primera visita del Ángel Moroni?", options: ["21 de Septiembre de 1823", "15 años", "15 libros"], correct: 0, tip: "J S Historia" },
-    { text: "¿Cuantos años predico el evangelio Ammón?", options: ["15 libros", "14 años", "8 años"], correct: 1, tip: "GEE pág. 141" },
-    { text: "¿Los 2000 jóvenes guerreros, de que hijo de Lehî, eran descendientes?", options: ["1 año", "8 años", "Laman"], correct: 2, tip: "Alma 56:3" },
-    { text: "¿El señor mando guardar y sellar las planchas a Moroni hasta que sean puros delante del Señor, a quienes se refería?", options: ["Blanco", "Los Gentiles", "Que sacaría a luz el Libro de Mormón"], correct: 1, tip: "Éter 4:5-6" },
-    { text: "¿Como se llamaba el segundo hijo de la familia de Lehi y Sariah?", options: ["Lemuel", "Manases", "Melquisedec"], correct: 0, tip: "1 Ne 2:4" },
-    { text: "¿Qué convenio hizo el Señor con el profeta Enos, luego que este orara intensamente?", options: ["Dos días y una noche de claridad continua", "Que sacaría a luz el Libro de Mormón", "8 años"], correct: 1, tip: "Enos 1:15-17" },
-    { text: "¿Cual fue una de las señales que tuvieron los habitantes de América del nacimiento del Salvador?", options: ["José", "Dos días y una noche de claridad continua", "Jacob"], correct: 1, tip: "Hel 14: 2-7, 3 Ne 1:19-21" },
-    { text: "¿El capitán Moroni alzo un estandarte en el que decía \"En memoria de nuestra…\"?", options: ["Nefi", "Martin Harris, Oliver Cowdery y David Witmer", "Libertad"], correct: 2, tip: "Alma 46:12" },
-    { text: "¿Porque vio el hermano de Jared, \"El dedo del Señor\"?", options: ["1.021 años", "Samuel el Lamanita", "Por la gran fe que tenía"], correct: 2, tip: "Éter 12:21" },
-    { text: "¿Como se llamaba el primer hijo de Lehi y su esposa que nació en el desierto?", options: ["Jacob", "Los Gentiles", "Libertad"], correct: 0, tip: "Jacob 2:1-2" },
-    { text: "¿En qué idioma se escribió el Libro de Mormón?", options: ["600 años", "Con el Hierro", "Egipcio Reformado"], correct: 2, tip: "1 Ne 1:2" },
-    { text: "¿Cuál es el nombre del Mar que el pueblo de Israel cruzo, guiados por Moisés?", options: [": Libro de Mormón", "Jacob", "Mar Rojo"], correct: 2, tip: "Éxodo 14:13" },
-    { text: "¿Como llamaron Lehi y su familia al lugar donde llegaron después de viajar por el desierto?", options: ["Encarcelado", "Abundancia", "Nefi"], correct: 1, tip: "1 Ne 17:5" },
-    { text: "¿Cuantos años tenía el Profeta Mormón cuando fue visitado por el Señor?", options: ["8 años", "15 años", "2 Nefi 4"], correct: 1, tip: "Mormón 1:15" },
-    { text: "¿Cuál es el acontecimiento de mayor transcendencia del Libro de Mormón?", options: ["Enos – Hijo de Jacob", "Desierto", "El Ministerio personal de Jesucristo entre los Nefitas"], correct: 2, tip: "3 Ne 11" },
-    { text: "¿Donde se mencionan detalladamente a los diez mandamientos en el Libro de Mormón?", options: ["Mosiah", "Laban", "Las planchas de Bronce"], correct: 0, tip: "Mosiah 13:12-24" },
-    { text: "¿A que profeta o sumo sacerdote Abraham, pago sus Diezmos?", options: ["Melquisedec", "Blanco", "Libertad"], correct: 0, tip: "Alma 13:15" },
-    { text: "¿Cuál era la razón por la que el espíritu mando a Nefi a Matar a Laban?", options: ["Porque es preferible que muera un hombre a que toda una generación se pierda", "Laman", "Enos – Hijo de Jacob"], correct: 0, tip: "1 Ne 4:12-13" },
-    { text: "¿A que se asemejaba era originalmente la Liahona?", options: ["Libertad", "Una especie de brújula", "Martin Harris, Oliver Cowdery y David Witmer"], correct: 1, tip: "1 Ne 16:10" },
-    { text: "¿Christian Whitmer, Hiram Page, José Smith Padre, Hyrum Smith y Samuel H Smith, que tienen de especial en común?", options: ["Son cinco de los ocho testigos del Libro de Mormón", "Dos días y una noche de claridad continua", "Laman"], correct: 0, tip: "Intr. Del LdeM" },
-    { text: "¿Que es el árbol de la vida del sueño de Lehi?", options: ["Laman con un rio y Lemuel con un valle", "63 Años", "El Amor de Dios"], correct: 2, tip: "1 Ne 11:25" },
+  "libro_mormon": [
+    {
+      "text": "¿Quién fue el primer profeta que salió de Jerusalén por mandato del Señor?",
+      "options": [
+        "Ismael",
+        "Lehi",
+        "Zoram"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Cuántos hijos tenía Lehi originalmente?",
+      "options": [
+        "2",
+        "4",
+        "6"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿A quién tuvo que decapitar Nefi para obtener las planchas de bronce?",
+      "options": [
+        "Labán",
+        "Lemuel",
+        "Amulón"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Cómo se llamaba el objeto que sirvió de brújula para la familia de Lehi?",
+      "options": [
+        "El Urim",
+        "La Liahona",
+        "La barra de hierro"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿De qué material estaban hechas las planchas que contenían la genealogía de Lehi?",
+      "options": [
+        "Oro",
+        "Plata",
+        "Bronce"
+      ],
+      "correct": 2,
+      "tip": null
+    },
+    {
+      "text": "¿Quién era el hijo mayor de Lehi?",
+      "options": [
+        "Lamán",
+        "Lemuel",
+        "Sam"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿A qué familia convencieron los hijos de Lehi para que se uniera a su viaje?",
+      "options": [
+        "La de Labán",
+        "La de Ismael",
+        "La de Zoram"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿En qué lugar murió Ismael durante el viaje por el desierto?",
+      "options": [
+        "Nahom",
+        "Abundancia",
+        "Jerusalén"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Qué material usó Nefi para construir el barco?",
+      "options": [
+        "Cedro del Líbano",
+        "Madera fina",
+        "Metal fundido"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Cuál de los hijos de Lehi fue siempre obediente y no murmuró?",
+      "options": [
+        "Sam",
+        "Lemuel",
+        "Lamán"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Quiénes fueron los dos hijos de Lehi que nacieron en el desierto?",
+      "options": [
+        "Jacob y José",
+        "Enós y Jarom",
+        "Mosíah y Helamán"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Qué representan las aguas sucias en el sueño de Lehi?",
+      "options": [
+        "El amor de Dios",
+        "Las profundidades del infierno",
+        "El bautismo"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué representa la barra de hierro en el sueño de Lehi?",
+      "options": [
+        "El Espíritu Santo",
+        "La palabra de Dios",
+        "La Iglesia"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Cómo era el fruto del árbol de la vida en el sueño de Lehi?",
+      "options": [
+        "Dulce y blanco",
+        "Rojo y amargo",
+        "Dorado y brillante"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Quién escribió las últimas palabras del Libro de Mormón?",
+      "options": [
+        "Mormón",
+        "Moroni",
+        "Éter"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Aproximadamente en qué año salió la familia de Lehi de Jerusalén?",
+      "options": [
+        "400 d.C.",
+        "100 a.C.",
+        "600 a.C."
+      ],
+      "correct": 2,
+      "tip": null
+    },
+    {
+      "text": "¿Quién fue el profeta que compendió la mayor parte de las planchas?",
+      "options": [
+        "Nefi",
+        "Mormón",
+        "Mosíah"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Quién fue el profeta quemado hasta morir por el rey Noé?",
+      "options": [
+        "Abinadí",
+        "Alma",
+        "Amulek"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Cómo se llamaba el rey que escuchó a Abinadí y luego se arrepintió?",
+      "options": [
+        "Benjamín",
+        "Noé",
+        "Alma"
+      ],
+      "correct": 2,
+      "tip": null
+    },
+    {
+      "text": "¿A qué profeta se le mandó bautizar en las Aguas de Mormón?",
+      "options": [
+        "Alma el Padre",
+        "Helamán",
+        "Nefi"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Quién fue el líder de los 2,000 jóvenes guerreros?",
+      "options": [
+        "Moroni",
+        "Helamán",
+        "Teáncum"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Cómo se llamaba el capitán que escribió el \"Estandarte de la Libertad\"?",
+      "options": [
+        "Helamán",
+        "Moroni",
+        "Lehi"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Quién fue el profeta lamanita que predicó desde lo alto de una muralla?",
+      "options": [
+        "Samuel",
+        "Ammón",
+        "Aarón"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Quién fue el misionero que cortó los brazos de los ladrones en las aguas de Sebús?",
+      "options": [
+        "Ammón",
+        "Aarón",
+        "Omner"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Cómo se llamaban los hijos de Mosíah que fueron a predicar a los lamanitas?",
+      "options": [
+        "Lamán y Lemuel",
+        "Ammón, Aarón, Omner e Himni",
+        "Coriantón y Shiblón"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿A quién se le apareció el Señor para tocar 16 piedras?",
+      "options": [
+        "Al hermano de Jared",
+        "A Nefi",
+        "A Jacob"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Cuál fue el evento más importante registrado en 3 Nefi?",
+      "options": [
+        "La caída de los muros",
+        "La visita de Jesucristo",
+        "El fin de la guerra"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿A qué pueblo guio el Señor desde la Torre de Babel?",
+      "options": [
+        "Nefitas",
+        "Jareditas",
+        "Mulekitas"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Cuántas veces llamó Jesucristo a los niños durante Su visita a las Américas?",
+      "options": [
+        "Una vez",
+        "Siete veces",
+        "Los bendijo uno por uno"
+      ],
+      "correct": 2,
+      "tip": null
+    },
+    {
+      "text": "¿Quién fue el hijo de Alma que fue menos fiel en su misión a los zoramitas?",
+      "options": [
+        "Shiblón",
+        "Helamán",
+        "Coriantón"
+      ],
+      "correct": 2,
+      "tip": null
+    },
+    {
+      "text": "¿Qué pueblo vivía en la ciudad de Zarahemla antes de unirse a los nefitas?",
+      "options": [
+        "Lamanitas",
+        "Mulekitas",
+        "Jareditas"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué profeta vio al Señor \"dedo por dedo\" debido a su gran fe?",
+      "options": [
+        "Abraham",
+        "El hermano de Jared",
+        "Nefi"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué oración se encuentra en los capítulos 4 y 5 de Moroni?",
+      "options": [
+        "La de la Santa Cena",
+        "Del bautismo",
+        "De la confirmación"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Quién fue el último rey de los nefitas que fue muy justo y dio un discurso desde una torre?",
+      "options": [
+        "Rey Noé",
+        "Rey Mosíah",
+        "Rey Benjamín"
+      ],
+      "correct": 2,
+      "tip": null
+    },
+    {
+      "text": "¿Cómo se llamaba el hijo de Mormón?",
+      "options": [
+        "Moroni",
+        "Nefi",
+        "Éter"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿En qué cerro entregó Moroni las planchas a José Smith?",
+      "options": [
+        "Monte Sinaí",
+        "Cumorah",
+        "Monte de los Olivos"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Cuál de estos libros NO pertenece al Libro de Mormón?",
+      "options": [
+        "Jacob",
+        "Enós",
+        "Hechos"
+      ],
+      "correct": 2,
+      "tip": null
+    },
+    {
+      "text": "¿Quién escribió el libro de Éter?",
+      "options": [
+        "Éter",
+        "Moroni",
+        "Jared"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Qué nombre le dio Lehi al valle que estaba cerca del Mar Rojo?",
+      "options": [
+        "Lemuel",
+        "Lamán",
+        "Sion"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Qué eran los cuatro hijos de Mosíah?",
+      "options": [
+        "Príncipes",
+        "Jueces",
+        "Soldados"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Cómo se llaman los líderes que supervisan un grupo de misiones en una zona?",
+      "options": [
+        "Presidencia de Área",
+        "Sumo Consejo",
+        "Consejo de los Doce"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Qué profeta enseñó sobre la fe usando la analogía de una semilla?",
+      "options": [
+        "Alma",
+        "Amulek",
+        "Moroni"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Quién fue el anticristo que pidió una señal y quedó mudo?",
+      "options": [
+        "Nehor",
+        "Sherem",
+        "Korihor"
+      ],
+      "correct": 2,
+      "tip": null
+    },
+    {
+      "text": "¿Qué ciudad fue destruida por fuego durante la crucifixión de Cristo?",
+      "options": [
+        "Zarahemla",
+        "Abundancia",
+        "Moroni"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Quién era el siervo de Labán que viajó con la familia de Lehi?",
+      "options": [
+        "Zoram",
+        "Amulón",
+        "Laman"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Cómo se llamaba el padre del rey Benjamín?",
+      "options": [
+        "Mosíah",
+        "Zeniff",
+        "Noé"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Qué líder militar juró vengar la sangre de su hermano y fue asesinado por Teáncum?",
+      "options": [
+        "Zerahemna",
+        "Amalickíah",
+        "Ammorón"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Cuántos hombres fueron llamados para ser discípulos de Cristo en las Américas?",
+      "options": [
+        "10",
+        "12",
+        "70"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué objeto entregó el Señor al hermano de Jared para iluminar los barcos?",
+      "options": [
+        "Liahona",
+        "Piedras brillantes",
+        "Antorchas"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué rey inicuo hizo quemar al profeta Abinadí?",
+      "options": [
+        "Noé",
+        "Lamán",
+        "Limhi"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Quién fue el primer juez superior del pueblo de Nefi?",
+      "options": [
+        "Alma hijo",
+        "Mosíah",
+        "Nefi"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Cómo se llamaba el padre de Mormón?",
+      "options": [
+        "Moroni",
+        "Mormón",
+        "Ammarón"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿En qué idioma estaba escrito originalmente el Libro de Mormón?",
+      "options": [
+        "Hebreo",
+        "Egipcio reformado",
+        "Latín"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Quién escondió los registros sagrados en el cerro Cumorah por última vez?",
+      "options": [
+        "Mormón",
+        "Moroni",
+        "Ammarón"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué profeta jaredita sobrevivió para ver la destrucción de su pueblo?",
+      "options": [
+        "Jared",
+        "Éter",
+        "Shiz"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Cuál de los hijos de Alma hijo abandonó la misión por ir tras la ramera Isabel?",
+      "options": [
+        "Helamán",
+        "Shiblón",
+        "Coriantón"
+      ],
+      "correct": 2,
+      "tip": null
+    },
+    {
+      "text": "¿Quién convirtió al rey Lamoni?",
+      "options": [
+        "Ammón",
+        "Aarón",
+        "Alma"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Cuántos años duró la paz después de la visita de Jesucristo?",
+      "options": [
+        "100 años",
+        "Aproximadamente 200 años",
+        "400 años"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿A qué profeta le advirtió el Señor que debía huir de la tierra de Nefi al principio?",
+      "options": [
+        "Mosíah I",
+        "Zeniff",
+        "Alma"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Quién cortó los brazos de los ladrones en las aguas de Sebús?",
+      "options": [
+        "Ammón",
+        "Teáncum",
+        "Capitán Moroni"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Quién escribió la \"Alegoría del olivo\"?",
+      "options": [
+        "Isaías",
+        "Zenós",
+        "Neum"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Cómo se llamaba la esposa de Lehi?",
+      "options": [
+        "Saríah",
+        "Abish",
+        "Isabel"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Qué mujer lamanita corrió a congregar a la multitud cuando el rey Lamoni cayó al suelo?",
+      "options": [
+        "Saríah",
+        "Abish",
+        "María"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Quién era el comandante del ejército que luchó contra los jóvenes guerreros de Helamán?",
+      "options": [
+        "Zerahemna",
+        "Ammorón",
+        "Amalickíah"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué pueblo descubrió las 24 planchas de oro que contenían el registro jaredita?",
+      "options": [
+        "Pueblo de Alma",
+        "Pueblo de Limhi",
+        "Pueblo de Ammón"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Quién compendió la mayor parte del Libro de Mormón?",
+      "options": [
+        "Nefi",
+        "Mormón",
+        "Moroni"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Quién bautizó a miles en las Aguas de Mormón?",
+      "options": [
+        "Alma padre",
+        "Alma hijo",
+        "Abinadí"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Qué grupo hizo un convenio de no tomar las armas derramando sangre nuevamente?",
+      "options": [
+        "Zoramitas",
+        "Anti-Nefi-Lehitas",
+        "Amalekitas"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Cuál es el nombre del lugar donde se hundieron las ciudades durante la muerte de Cristo?",
+      "options": [
+        "Tierra de Abundancia",
+        "Tierra de Moroni",
+        "Tierra de Zarahemla"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Quién mató al líder jaredita Shiz decapitándolo?",
+      "options": [
+        "Coriántumr",
+        "Éter",
+        "Jared"
+      ],
+      "correct": 0,
+      "tip": null
+    }
   ],
-  miscelaneos: [
-    { text: "¿Que era la orden unida, de que se habla en Doctrina y Convenios?", options: ["La expiación de Jesucristo", "Es el único hijo nacido de Dios y una madre mortal", "Organización para vivir la ley de Consagración"], correct: 2, tip: "GGE pág. 154" },
-    { text: "¿De qué habla el artículo de FE No. 9?", options: ["Proclamar, Perfeccionar y Redimir", "Las revelaciones no cesaran", "Joseph Smith (Padre)"], correct: 1, tip: null },
-    { text: "¿De qué habla el artículo de FE NO. 7?", options: ["Al padecimiento que tuvo por todos nosotros en el jardín y en la Cruz", "El derecho de dirigir y presidir la Iglesia", "Los Dones del espíritu"], correct: 2, tip: null },
-    { text: "¿De qué habla el artículo de Fe No. 2?", options: ["Todos seremos juzgados por nuestros pecados", "Es la desobediencia intencional a los mandamientos de Dios", "Navoo"], correct: 0, tip: null },
-    { text: "¿De qué habla el artículo de FE No. 6?", options: ["La organización de la Iglesia", "En América", "Todos los domingos en la santa Cena"], correct: 0, tip: null },
-    { text: "¿De qué habla el artículo de FE No. 12?", options: ["La ley secular", "Gordon B. Hinckley", "75 años"], correct: 0, tip: null },
-    { text: "¿De qué habla el artículo de FE No. 3?", options: ["David O. Mckey", "La organización de la Iglesia", "La expiación de Jesucristo"], correct: 2, tip: null },
-    { text: "¿De qué habla el artículo de FE No. 10?", options: ["Deseo carnal por los bienes y placeres materiales", "Es la prueba de la capacidad de escoger entre el mal y el bien", "La congregación literal de Israel"], correct: 2, tip: null },
-    { text: "¿De qué habla el artículo de FE No. 5?", options: ["Los llamamientos deben ser por imposición de manos", "José Smith (Hijo)", "Organización para vivir la ley de Consagración"], correct: 0, tip: null },
-    { text: "¿De qué habla el artículo de FE No. 4?", options: ["La expiación de Jesucristo", "Es la desobediencia intencional a los mandamientos de Dios", "Los Principios y ordenanzas del Evangelio"], correct: 2, tip: null },
-    { text: "¿De qué habla el artículo de FE No. 11?", options: ["Gordon B. Hinckley", "Proclamar, Perfeccionar y Redimir", "El Derecho de adorar"], correct: 2, tip: null },
-    { text: "¿De qué habla el artículo de FE No. 13?", options: ["De los que los miembros de la iglesia aspiramos", "La vida Pre terrenal", "Es el único hijo nacido de Dios y una madre mortal"], correct: 0, tip: null },
-    { text: "¿De qué habla el artículo de fe No. 8?", options: ["Al padecimiento que tuvo por todos nosotros en el jardín y en la Cruz", "Defendamos la verdad y la rectitud", "La Biblia y el Libro de Mormón, son la palabra de Dios"], correct: 2, tip: null },
-    { text: "¿Cuanto Juicios enfrentaremos antes de heredar un grado de gloria?", options: ["75 años", "Dos Juicios", "7.000 años"], correct: 1, tip: "Uno parcial -Alma 40:11-15 y uno Final Apocal. 20:12" },
-    { text: "¿Cuando recordamos los Miembros de la iglesia, la Pascua?", options: ["Es la desobediencia intencional a los mandamientos de Dios", "De los que los miembros de la iglesia aspiramos", "Todos los domingos en la santa Cena"], correct: 2, tip: "Liahona Abril 1993" },
-    { text: "¿Cuál es la evidencia física de que una persona guardo su primer estado en la vida Pre terrenal?", options: ["Martin Harris", "Porque tiene un cuerpo físico", "Defendamos la verdad y la rectitud"], correct: 1, tip: "Abraham 3:2" },
-    { text: "¿Cuál es la máxima de las Mujeres Jóvenes?", options: ["Defendamos la verdad y la rectitud", "Gordon B. Hinckley", "Enoc"], correct: 0, tip: "Progreso Personal MMJJ" },
-    { text: "¿En donde vivíamos antes de venir al mundo?", options: ["7.000 años", "La vida Pre terrenal", "Un cambio de actitud hacia las cosas de Dios"], correct: 1, tip: "Abraham 3:26" },
-    { text: "¿Por qué frase o dicho se lo reconoce al Profeta Kimbal?", options: ["De antiguos papiros egipcios", "Hazlo", "David O. Mckey"], correct: 1, tip: null },
-    { text: "¿De donde proviene el libro \"La Perla de Gran Precio\"?", options: ["La vida Pre terrenal", "José Smith (Hijo)", "De antiguos papiros egipcios"], correct: 2, tip: "Introd. El libro La Perla de Gran Precio" },
-    { text: "¿Donde será la congregación de la Tribu de Judá?", options: ["Jerusalén", "Un cambio de actitud hacia las cosas de Dios", "Estado en que las personas cuya apariencia cambian temporalmente"], correct: 0, tip: "Princ. Del Evangelio cap. 42 pág. 257" },
-    { text: "¿En donde serán congregadas Las tribus de Efraín y Manases?", options: ["En América", "Organización para vivir la ley de Consagración", "75 años"], correct: 0, tip: "Princ. Del Evangelio cap. 42 pág. 257" },
-    { text: "¿En qué año sucedió la Primera Visión?", options: ["1820", "7.000 años", "1830"], correct: 0, tip: "J S Historia" },
-    { text: "¿La Biblia, El Libro de Mormón, Doctrina y Convenios y La Perla de Gran Precio, también son llamados:?", options: ["Los libros canónicos de la Iglesia", "De antiguos papiros egipcios", "Judá"], correct: 0, tip: null },
-    { text: "¿En que sección de Doctrina y Convenios se encuentra \"La Palabra de Sabiduría\"?", options: ["Sección 89", "Navoo", "1830"], correct: 0, tip: null },
-    { text: "¿Cuáles son los primero principios y ordenanzas del evangelio?", options: ["David O. Mckey", "Deseo carnal por los bienes y placeres materiales", "Fe en Jesucristo, arrepentimiento, Bautismo y el Don del espíritu Santo"], correct: 2, tip: "Art de fe No.4" },
-    { text: "¿Cuál es nuestro propósito acá en la tierra?", options: ["Jerusalén", "Tener un cuerpo y ser probados", "Testigos especiales de Cristo"], correct: 1, tip: null },
-    { text: "¿Cuál es la primer ley decretada en los cielos?", options: ["La Obediencia", "Joseph F. Smith", "Los justos y los que no conocieron ninguna ley"], correct: 0, tip: "Principios del evangelio cap. 35" },
-    { text: "¿Que es la Reverencia?", options: ["De antiguos papiros egipcios", "Profundo respeto por las cosas sagradas", "Testigos especiales de Cristo"], correct: 1, tip: "GEE pág. 177" },
-    { text: "¿Que es el Diezmo?", options: ["El pago de la décima parte de nuestras ganancias", "Defendamos la verdad y la rectitud", "Carthage"], correct: 0, tip: null },
-    { text: "¿Donde estaba situada la capital del Reino de Judá?", options: ["Proclamar, Perfeccionar y Redimir", "La Biblia y el Libro de Mormón, son la palabra de Dios", "Jerusalén"], correct: 2, tip: "GEE pág. 114" },
-    { text: "¿Que significado tiene la palabra \"El Cristo\"?", options: ["Hazlo", "El Ungido", "Las revelaciones no cesaran"], correct: 1, tip: "GEE pág. 206" },
-    { text: "¿A que dará inicio la segunda vendida del salvador?", options: ["Al Milenio", "Los justos y los que no conocieron ninguna ley", "Los Principios y ordenanzas del Evangelio"], correct: 0, tip: "GEE pág. 136" },
-    { text: "¿A que llamamos tentación?", options: ["Es la prueba de la capacidad de escoger entre el mal y el bien", "El Derecho de adorar", "La Primera Presidencia"], correct: 0, tip: "GEE pág. 200" },
-    { text: "¿Cuál fue el primer templo construido en esta última dispensación?", options: ["Joseph F. Smith", "Kirtland", "Al padecimiento que tuvo por todos nosotros en el jardín y en la Cruz"], correct: 1, tip: "GEE pág. 200" },
-    { text: "¿Porque se dice que Jesús es el Unigénito del Padre?", options: ["Es el único hijo nacido de Dios y una madre mortal", "Los llamamientos deben ser por imposición de manos", "Jerusalén"], correct: 0, tip: "GEE pág. 169" },
-    { text: "¿Que sacerdocio tenia Juan el Bautista y quien se lo confirió?", options: ["Joseph Smith (Padre)", "Al Milenio", "Aarónico – un ángel"], correct: 2, tip: "DyC 84:28" },
-    { text: "¿A qué edad fue llamado Enoc para ser profeta de Dios?", options: ["1820", "75 años", "6 personas"], correct: 1, tip: "Moises 6:25-26" },
-    { text: "¿Con quien hizo el primer pacto el Señor, de hacer cesar las Aguas del diluvio?", options: ["Enoc", "La Primera Presidencia", "Jerusalén"], correct: 0, tip: "Moises 7:50-51" },
-    { text: "¿En qué fecha se dedicó el temple de Cochabamba Bolivia?", options: ["7.000 años", "30 de Abril de 2000", "1820"], correct: 1, tip: "Libro de la Misión Santa Cruz-Bolivia" },
-    { text: "¿Cuanto tiempo llevo construir el Templo de Lago Salado?", options: ["40 años", "7.000 años", "75 años"], correct: 0, tip: "Historia de la Iglesia" },
-    { text: "¿Como se llamaba el hijo de Hyrum Smith que llego a ser Profeta?", options: ["Joseph F. Smith", "La Obediencia", "Al Milenio"], correct: 0, tip: null },
-    { text: "¿Que es la concupiscencia?", options: ["Los libros canónicos de la Iglesia", "En América", "Deseo carnal por los bienes y placeres materiales"], correct: 2, tip: "GEE pág. 35" },
-    { text: "¿En qué año fue impreso el primer ejemplar del Libro de Mormón?", options: ["40 años", "1830", "30 de Abril de 2000"], correct: 1, tip: "Manual de Historia de la Iglesia" },
-    { text: "¿Que es la transfiguración?", options: ["Hazlo", "Gordon B. Hinckley", "Estado en que las personas cuya apariencia cambian temporalmente"], correct: 2, tip: "GEE pág. 204" },
-    { text: "¿Donde se encuentran sepultados José Smith y su hermano Hyrum?", options: ["David O. Mckey", "Navoo", "Al Milenio"], correct: 1, tip: "GGE pág. 260" },
-    { text: "¿Con cuantas personas se organizó la iglesia en esta última dispensación?", options: ["30 de Abril de 2000", "6 personas", "7.000 años"], correct: 1, tip: null },
-    { text: "¿Cuál de los testamentos de la Biblia se dividen en Libros Históricos, Poéticos y Proféticos?", options: ["Antiguo testamento", "Proclamar, Perfeccionar y Redimir", "Los Principios y ordenanzas del Evangelio"], correct: 0, tip: "GEE pág. 16" },
-    { text: "¿Quien escribió el Libro de Proverbios del antiguo Testamento?", options: ["Salomón", "Carthage", "David"], correct: 0, tip: "GEE pág. 171" },
-    { text: "¿Quien escribió el libro de Salmos del Antiguo Testamento?", options: ["Enoc", "La Primera Presidencia", "David"], correct: 2, tip: "GEE pág. 171" },
-    { text: "¿Como son también llamados los doce apóstoles?", options: ["Dos Juicios", "7.000 años", "Testigos especiales de Cristo"], correct: 2, tip: null },
-    { text: "¿Con que otro nombre se los conoce al Profeta y sus dos consejeros?", options: ["La Primera Presidencia", "Navoo", "75 años"], correct: 0, tip: null },
-    { text: "¿Que es la ley de consagración?", options: ["Testigos especiales de Cristo", "Es dar voluntariamente de todos nuestros bienes al Reino de dios", "Los Dones del espíritu"], correct: 1, tip: "GEE pág. 37" },
-    { text: "¿Que es el Pecado?", options: ["Gordon B. Hinckley", "Es la desobediencia intencional a los mandamientos de Dios", "La expiación de Jesucristo"], correct: 1, tip: "GEE pág. 161" },
-    { text: "¿Que es el Arrepentimiento?", options: ["Navoo", "Un cambio de actitud hacia las cosas de Dios", "Profundo respeto por las cosas sagradas"], correct: 1, tip: "GEE pág. 19" },
-    { text: "¿Cuál es el lema de la Sociedad de Socorro?", options: ["40 años", "La caridad nunca deja de ser", "1830"], correct: 1, tip: "MII – 2 pág. 234, Moroni 7:46" },
-    { text: "¿Que son las llaves del Sacerdocio?", options: ["El derecho de dirigir y presidir la Iglesia", "La ley secular", "La Biblia y el Libro de Mormón, son la palabra de Dios"], correct: 0, tip: "GEE pág. 127" },
-    { text: "¿Cuáles son las tres misiones de la Iglesia?", options: ["La organización de la Iglesia", "Proclamar, Perfeccionar y Redimir", "6 personas"], correct: 1, tip: null },
-    { text: "¿De que tribu era descendiente Jesucristo?", options: ["Judá", "75 años", "De los que los miembros de la iglesia aspiramos"], correct: 0, tip: "Génesis 49:10 GEE pág. 114" },
-    { text: "¿Quien dijo; \"Ningún éxito en la vida, puede compensar el fracaso en el Hogar\"?", options: ["El Ungido", "Jerusalén", "David O. Mckey"], correct: 2, tip: null },
-    { text: "¿Cuál es el nombre de la primera persona que ayuda a José Smith a traducir el Libro de Mormón?", options: ["Carthage", "Martin Harris", "El concepto verdadero de la Trinidad"], correct: 1, tip: "manual Inst. Historia de la Iglesia pág. 52" },
-    { text: "¿Quienes se levantaran en la primera resurrección?", options: ["Los justos y los que no conocieron ninguna ley", "7.000 años", "Al Milenio"], correct: 0, tip: "DyC 45:54" },
-    { text: "¿Cuantos tiempo será la existencia temporal de la Tierra en su estado caído?", options: ["1820", "7.000 años", "6 personas"], correct: 1, tip: "Doctrina de Salvación pág. 75-77" },
-    { text: "¿A que llamamos la Expiación de Jesucristo?", options: ["Al padecimiento que tuvo por todos nosotros en el jardín y en la Cruz", "Hazlo", "Profundo respeto por las cosas sagradas"], correct: 0, tip: "Prin. del Evangelio pág. 3" },
-    { text: "¿Que Profeta fue el que dijo que los conversos necesitan; Un amigo, una responsabilidad y ser nutridos de la buena palabra?", options: ["De los que los miembros de la iglesia aspiramos", "Gordon B. Hinckley", "6 personas"], correct: 1, tip: null },
-    { text: "¿Como se llamaba la cárcel donde fueron muertos el profeta José y su hermano Hyrum?", options: ["Judá", "Kirtland", "Carthage"], correct: 2, tip: "Historia de la Iglesia" },
-    { text: "¿Quien fue el primer Elder de nuestra dispensación?", options: ["José Smith (Hijo)", "Navoo", "Carthage"], correct: 0, tip: "DyC 21:1-2" },
-    { text: "¿Quien fue el primer patriarca de nuestra dispensación?", options: ["Joseph Smith (Padre)", "David O. Mckey", "Antiguo testamento"], correct: 0, tip: "manual de semin. Historia de la Iglesia" },
-    { text: "¿De qué habla el artículo de FE No. 1?", options: ["El pago de la décima parte de nuestras ganancias", "El concepto verdadero de la Trinidad", "Dos Juicios"], correct: 1, tip: null },
-    { text: "¿Durante una sequia en Saint George, que Profeta de la Iglesia enseño a los Santos a obedecer la Ley de los Diezmos?", options: ["Joseph F. Smith", "Lorenzo Snow", "Profundo respeto por las cosas sagradas"], correct: 1, tip: null },
-  ],
+  "miscelaneos": [
+    {
+      "text": "¿Cuántos Artículos de Fe hay?",
+      "options": [
+        "10",
+        "12",
+        "13"
+      ],
+      "correct": 2,
+      "tip": null
+    },
+    {
+      "text": "¿Quién es el actual Presidente de la Iglesia? (2026)",
+      "options": [
+        "Russell M. Nelson",
+        "Dallin H. Oaks",
+        "Jeffrey R. Holland"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Cuál es la \"obra y gloria de Dios\" según Moisés 1:39?",
+      "options": [
+        "Crear mundos",
+        "Juzgar al mundo",
+        "Llevar a cabo la inmortalidad y la vida eterna del hombre"
+      ],
+      "correct": 2,
+      "tip": null
+    },
+    {
+      "text": "¿Cómo se llama el programa para niños de 3 a 11 años?",
+      "options": [
+        "Primaria",
+        "Mujeres Jóvenes",
+        "Hombres Jóvenes"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Cómo se llama el instrumento para traducir mencionado en Doctrina y Convenios?",
+      "options": [
+        "Liahona",
+        "Urim y Tumim",
+        "Piedra de Sion"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Dónde se encuentran las oficinas generales de la Iglesia?",
+      "options": [
+        "Salt Lake City, Utah",
+        "Nauvoo, Illinois",
+        "Independence, Misuri"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Cuál es el primer Artículo de Fe?",
+      "options": [
+        "Creemos en la Biblia",
+        "Creemos en Dios el Eterno Padre...",
+        "Creemos en el arrepentimiento"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué organización de la Iglesia usa el lema \"Haz lo Justo\"?",
+      "options": [
+        "Sociedad de Socorro",
+        "Primaria",
+        "Cuórum de Élderes"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿A qué edad pueden salir a la misión los hombres jóvenes?",
+      "options": [
+        "17 años",
+        "18 años",
+        "19 años"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿A qué edad pueden salir a la misión las mujeres jóvenes?",
+      "options": [
+        "18 años",
+        "19 años",
+        "21 años"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué representan el pan y el agua de la Santa Cena?",
+      "options": [
+        "El cuerpo y la sangre de Cristo",
+        "La vida y la muerte",
+        "El maná y el vino"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Quién fue el profeta que guio a los pioneros al Valle del Lago Salado?",
+      "options": [
+        "José Smith",
+        "Brigham Young",
+        "Wilford Woodruff"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Cómo se llama el sistema de educación religiosa para jóvenes de secundaria?",
+      "options": [
+        "Instituto",
+        "Seminario",
+        "Universidad"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Cuál es el propósito principal de los Templos?",
+      "options": [
+        "Reuniones sociales",
+        "Realizar ordenanzas de salvación",
+        "Dar discursos dominicales"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Cuál es el título del primer facsímil del Libro de Abraham?",
+      "options": [
+        "El sacrificio de Abraham",
+        "El mapa de Egipto",
+        "La creación"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿En qué sección se definen el sacerdocio mayor y menor?",
+      "options": [
+        "Sección 1",
+        "Sección 107",
+        "Sección 121"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿A qué edad tuvo José Smith su Primera Visión?",
+      "options": [
+        "12 años",
+        "14 años",
+        "17 años"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué Artículo de Fe habla sobre el bautismo por inmersión?",
+      "options": [
+        "El segundo",
+        "El cuarto",
+        "El décimo"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Cómo se llama la ley que pide consagrar las propiedades en Doctrina y Convenios?",
+      "options": [
+        "Ley de Consagración",
+        "Ley del Diezmo",
+        "Ley de Salud"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Cómo se llama la ley que pide no comer ni beber durante dos comidas consecutivas?",
+      "options": [
+        "Ley de pureza",
+        "Ofrenda de ayuno",
+        "Ayuno"
+      ],
+      "correct": 2,
+      "tip": null
+    },
+    {
+      "text": "¿Cuál es el nombre del famoso coro de la Iglesia?",
+      "options": [
+        "Coro de Utah",
+        "El Coro del Tabernáculo de la Manzana del Templo",
+        "Coro de los Santos"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué revista oficial de la Iglesia está dirigida a los adultos?",
+      "options": [
+        "Liahona",
+        "El Amigo",
+        "Para la Fortaleza de la Juventud"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Dónde se guardan los registros genealógicos más grandes del mundo?",
+      "options": [
+        "Biblioteca de Historia",
+        "Bóveda de la Montaña de Granito",
+        "Museo de la Iglesia"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Cuál es el cuarto Artículo de Fe?",
+      "options": [
+        "Creemos en el diezmo",
+        "Creemos que los primeros principios...",
+        "Creemos en el don de lenguas"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué símbolo se usa frecuentemente en la Iglesia para representar el servicio misional?",
+      "options": [
+        "Un barco",
+        "Una placa misional",
+        "Una Biblia"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Cuál es el nombre del folleto que contiene las normas para los jóvenes?",
+      "options": [
+        "Mi Camino a la Salvación",
+        "Para la Fortaleza de la Juventud",
+        "Mi Deber a Dios"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿En qué mes se celebra la Conferencia General anual?",
+      "options": [
+        "Enero",
+        "Abril",
+        "Julio"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿En qué mes se celebra la Conferencia General semestral?",
+      "options": [
+        "Septiembre",
+        "Octubre",
+        "Diciembre"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué autoridad preside sobre un Barrio en la Iglesia?",
+      "options": [
+        "El Presidente de Estaca",
+        "El Patriarca",
+        "El Obispo"
+      ],
+      "correct": 2,
+      "tip": null
+    },
+    {
+      "text": "¿Qué autoridad preside sobre una Estaca?",
+      "options": [
+        "El Presidente de Estaca",
+        "El Obispo",
+        "El Setenta de Área"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Cuántos meses dura normalmente el servicio misional de un hombre joven?",
+      "options": [
+        "18 meses",
+        "24 meses (2 años)",
+        "36 meses"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Cuál es la función del Sacerdocio Aarónico?",
+      "options": [
+        "Administrar ordenanzas temporales",
+        "Gobernar toda la Iglesia",
+        "Realizar sellamientos"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Cómo se llama el programa para ayudar a los miembros a ser autosuficientes?",
+      "options": [
+        "Bienestar y Autosuficiencia",
+        "Fondo Perpetuo para la Educación",
+        "Manos que Ayudan"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Qué día guardan los Santos de los Últimos Días como el día del Señor?",
+      "options": [
+        "Sábado",
+        "Domingo",
+        "Viernes"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué canción cantan los niños de la Primaria sobre las familias?",
+      "options": [
+        "Las familias pueden ser eternas",
+        "Soy un hijo de Dios",
+        "Haz lo justo"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Qué significa \"Ministrar\" en la Iglesia?",
+      "options": [
+        "Dar un discurso",
+        "Cuidar de otros como lo haría el Salvador",
+        "Limpiar la capilla"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Cuál es el nombre del programa de la Iglesia para ayuda humanitaria en desastres?",
+      "options": [
+        "Cruz Amarilla",
+        "Manos que Ayudan",
+        "Servicio Mundial"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Cuál es la meta final de las familias en el Templo?",
+      "options": [
+        "Casarse legalmente",
+        "Ser sellados por la eternidad",
+        "Conocer su historia"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué Artículo de Fe menciona el privilegio de adorar a Dios según los dictados de nuestra conciencia?",
+      "options": [
+        "El 1º",
+        "El 12º",
+        "El 11º"
+      ],
+      "correct": 2,
+      "tip": null
+    },
+    {
+      "text": "¿Qué ciudad en Bolivia tiene el primer Templo construido en el país?",
+      "options": [
+        "La Paz",
+        "Santa Cruz",
+        "Cochabamba"
+      ],
+      "correct": 2,
+      "tip": null
+    },
+    {
+      "text": "¿Quién era el siervo de Labán que se unió a Nefi?",
+      "options": [
+        "Zoram",
+        "Amulón",
+        "Korihor"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Cuál es la flor oficial que a menudo se asocia con la historia pionera de Utah?",
+      "options": [
+        "Rosa",
+        "Lirio de los sego",
+        "Girasol"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué símbolo del antiguo testamento (colmena) es ampliamente usado en el estado de Utah y en la cultura de la Iglesia?",
+      "options": [
+        "Deseret",
+        "Sion",
+        "Liahona"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Cuál es el nombre del actual himnario de la Iglesia?",
+      "options": [
+        "Himnos de Sion",
+        "Himnos",
+        "Cantos de Alabanza"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Cuántas horas dura normalmente el bloque de reuniones dominicales actualmente?",
+      "options": [
+        "3 horas",
+        "2 horas",
+        "1 hora"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué organización de la Iglesia fue fundada en 1842 por José Smith?",
+      "options": [
+        "Sociedad de Socorro",
+        "Mujeres Jóvenes",
+        "Primaria"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Cuál es la revista oficial para los niños de la Iglesia?",
+      "options": [
+        "Liahona",
+        "El Amigo",
+        "Para la Fortaleza de la Juventud"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué edad se requiere para iniciar las clases de Seminario?",
+      "options": [
+        "12 años",
+        "14 años (o noveno grado)",
+        "16 años"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué profeta inició el Fondo Perpetuo para la Educación?",
+      "options": [
+        "Gordon B. Hinckley",
+        "Thomas S. Monson",
+        "Russell M. Nelson"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Cuántos quórumes de los Setenta existen para administrar la obra mundial?",
+      "options": [
+        "2",
+        "5",
+        "Múltiples (actualmente más de 12)"
+      ],
+      "correct": 2,
+      "tip": null
+    },
+    {
+      "text": "¿Cuál es el edificio más emblemático de la Manzana del Templo, además del templo mismo?",
+      "options": [
+        "El Tabernáculo",
+        "El Centro de Conferencias",
+        "El Edificio Conmemorativo"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿En qué año se organizó oficialmente la Iglesia de Jesucristo de los Santos de los Últimos Días?",
+      "options": [
+        "1820",
+        "1830",
+        "1844"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué presidente de la Iglesia es conocido por hacer gran énfasis en la historia familiar y la construcción de templos a nivel mundial a partir de los 90s?",
+      "options": [
+        "Ezra Taft Benson",
+        "Gordon B. Hinckley",
+        "Spencer W. Kimball"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Cuál es el rango de edad para ser considerado Joven Adulto Soltero (JAS)?",
+      "options": [
+        "16-25",
+        "18-30",
+        "21-35"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué profeta de la iglesia enfatizó \"Toda persona digna y capaz debe servir en una misión\"?",
+      "options": [
+        "Spencer W. Kimball",
+        "David O. McKay",
+        "Joseph Fielding Smith"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Cuántos artículos de fe se enfocan en los dones del Espíritu (lenguas, profecía, revelación)?",
+      "options": [
+        "El séptimo",
+        "El noveno",
+        "El décimo"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Quién escribió la letra del himno \"El Espíritu de Dios\"?",
+      "options": [
+        "W. W. Phelps",
+        "Emma Smith",
+        "Parley P. Pratt"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Qué programa reemplazó a la orientación familiar y a las maestras visitantes?",
+      "options": [
+        "Ministración",
+        "Hermanos Cuidadores",
+        "Programa de Apoyo"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Qué libro de la Perla de Gran Precio fue traducido a partir de papiros egipcios?",
+      "options": [
+        "Libro de Moisés",
+        "Libro de Abraham",
+        "Escritos de José Smith"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿En qué universidad de Utah es propietaria y operada directamente por la Iglesia?",
+      "options": [
+        "Universidad de Utah",
+        "Brigham Young University (BYU)",
+        "Universidad Estatal de Utah"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Cómo se denomina el plan de autoayuda de la iglesia durante tiempos de necesidad?",
+      "options": [
+        "Plan de Bienestar",
+        "Plan de Contingencia",
+        "Almacén del Obispo"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Qué artículo de fe declara nuestra creencia en ser honrados, verídicos, castos y benevolentes?",
+      "options": [
+        "El décimo",
+        "El decimotercero",
+        "El duodécimo"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué presidente de la Iglesia emitió la proclamación sobre La Familia en 1995?",
+      "options": [
+        "Howard W. Hunter",
+        "Gordon B. Hinckley",
+        "Thomas S. Monson"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué festividad de la iglesia se celebra el 24 de julio?",
+      "options": [
+        "Día de la Restauración",
+        "Día del Pionero",
+        "Día del Templo"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Quién dirigió históricamente la construcción del Tabernáculo de Salt Lake?",
+      "options": [
+        "Brigham Young",
+        "John Taylor",
+        "Wilford Woodruff"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Qué organización de la Iglesia apoya específicamente a las jóvenes a partir de los 12 años?",
+      "options": [
+        "Primaria",
+        "Mujeres Jóvenes",
+        "Sociedad de Socorro"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿Qué artículo de fe afirma que el hombre será castigado por sus propios pecados?",
+      "options": [
+        "El primero",
+        "El segundo",
+        "El tercero"
+      ],
+      "correct": 1,
+      "tip": null
+    },
+    {
+      "text": "¿En qué estado nació José Smith?",
+      "options": [
+        "Vermont",
+        "Nueva York",
+        "Pensilvania"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Cómo se llamaba el padre de José Smith?",
+      "options": [
+        "Joseph",
+        "John",
+        "Hyrum"
+      ],
+      "correct": 0,
+      "tip": null
+    },
+    {
+      "text": "¿Qué presidente introdujo la iniciativa de \"Ven, Sígueme\" centrado en el hogar?",
+      "options": [
+        "Thomas S. Monson",
+        "Russell M. Nelson",
+        "Gordon B. Hinckley"
+      ],
+      "correct": 1,
+      "tip": null
+    }
+  ]
 };
 
 const QUESTION_TIME = 20;          // segundos por pregunta
