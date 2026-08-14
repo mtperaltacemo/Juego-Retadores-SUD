@@ -46,9 +46,9 @@
 
   .topbar { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:14px; }
   .brand-logo-credit { display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-  .brand-logo-credit img { height:48px; width:auto; display:block; filter:drop-shadow(0 3px 8px rgba(18,59,99,0.25)); }
-  @media (max-width:380px) { .brand-logo-credit img { height:38px; } }
-  .brand-logo img { height:36px; width:auto; display:block; filter:drop-shadow(0 2px 6px rgba(18,59,99,0.18)); }
+  .brand-logo-credit img { height:64px; width:auto; display:block; filter:drop-shadow(0 3px 8px rgba(18,59,99,0.25)); }
+  .brand-logo img { height:50px; width:auto; display:block; filter:drop-shadow(0 2px 6px rgba(18,59,99,0.18)); }
+  @media (max-width:380px) { .brand-logo-credit img { height:52px; } .brand-logo img { height:42px; } }
 
   .page-title {
     font-family:'Bebas Neue',sans-serif; font-size:28px; font-weight:400;
@@ -168,6 +168,13 @@
   .status-icon { font-size:38px; margin-bottom:8px; }
   .status-text { font-size:15.5px; font-weight:600; line-height:1.5; }
   .status-sub { font-size:13px; color:var(--muted); margin-top:6px; }
+
+  .reopen-timer {
+    margin-top:14px; display:inline-flex; align-items:center; gap:8px;
+    background:rgba(242,183,5,0.14); border:1.5px solid var(--yellow); border-radius:999px;
+    padding:8px 18px; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:15px; color:var(--yellow);
+  }
+  .reopen-timer.urgent { border-color:var(--danger); color:var(--danger); background:rgba(255,106,77,0.14); }
 
   .locked-info {
     background:var(--panel-2); border:2px solid var(--yellow); border-radius:12px; padding:16px; margin-bottom:16px; text-align:center;
@@ -300,8 +307,9 @@
 
       <div id="waitingLockBox" class="status-box">
         <div class="status-icon">📡</div>
-        <div class="status-text">Pregunta lanzada — esperando que alguien responda...</div>
-        <div class="status-sub">El primero en tocar una opción se bloquea automáticamente.</div>
+        <div class="status-text" id="waitingLockText">Pregunta lanzada — esperando que alguien responda...</div>
+        <div class="status-sub" id="waitingLockSub">El primero en tocar una opción se bloquea automáticamente.</div>
+        <div id="reopenTimerBox" class="reopen-timer hidden">⏱ Quedan <span id="reopenTimerSeconds">10</span>s para responder</div>
       </div>
 
       <div id="lockedReviewBox" class="hidden">
@@ -720,6 +728,42 @@ document.getElementById('tabCustomBtn').addEventListener('click', () => {
 
 /* ---------- lanzar pregunta ---------- */
 let activeCorrectIndex = null; // solo vive en memoria del anfitrión, nunca se escribe a la DB compartida
+let reopenTimerHandle = null;  // setInterval de la cuenta regresiva de 10s al reabrir tras una respuesta incorrecta
+
+function clearReopenTimer() {
+  if (reopenTimerHandle) { clearInterval(reopenTimerHandle); reopenTimerHandle = null; }
+}
+
+function startReopenTimer(q) {
+  const box = document.getElementById('reopenTimerBox');
+  const secEl = document.getElementById('reopenTimerSeconds');
+  const deadline = q.reopenDeadline;
+  const qId = q.qId;
+  box.classList.remove('hidden');
+  const tick = () => {
+    const msLeft = deadline - Date.now();
+    const secs = Math.max(0, Math.ceil(msLeft / 1000));
+    secEl.textContent = secs;
+    box.classList.toggle('urgent', secs <= 3);
+    if (msLeft <= 0) {
+      clearReopenTimer();
+      expireReopenWindow(qId, deadline);
+    }
+  };
+  tick();
+  reopenTimerHandle = setInterval(tick, 250);
+}
+
+// se cumplieron los 10s del reabierto y nadie respondió a tiempo: se cierra la ronda
+// como "todos fallaron" (transacción guardada para no pisar una respuesta que llegó justo a tiempo)
+async function expireReopenWindow(qId, deadline) {
+  const qRef = DB.ref('liveGames/' + currentGameCode + '/question');
+  await qRef.transaction(current => {
+    if (!current || current.qId !== qId) return; // la pregunta ya cambió
+    if (current.status !== 'open' || current.reopenDeadline !== deadline) return; // ya no aplica
+    return Object.assign({}, current, { status: 'resolved_wrong_all', lockedBy: null, reopenDeadline: null });
+  });
+}
 
 async function launchBankQuestion(cat, idx) {
   const q = QUESTIONS[cat][idx];
@@ -767,6 +811,8 @@ document.getElementById('launchCustomBtn').addEventListener('click', async () =>
 
 /* ---------- render de la pregunta activa (estado en vivo) ---------- */
 function renderActiveQuestion(q) {
+  clearReopenTimer();
+
   const pickerBox = document.getElementById('pickerBox');
   const activeBox = document.getElementById('activeBox');
 
@@ -807,6 +853,18 @@ function renderActiveQuestion(q) {
 
   if (q.status === 'open') {
     waitingBox.classList.remove('hidden');
+    const reopenTimerBox = document.getElementById('reopenTimerBox');
+    const waitingText = document.getElementById('waitingLockText');
+    const waitingSub = document.getElementById('waitingLockSub');
+    if (q.reopenDeadline) {
+      waitingText.textContent = 'Se reabrió la pregunta — responden los demás participantes';
+      waitingSub.textContent = 'Quien falló queda bloqueado. Los demás tienen 10 segundos para tocar una opción.';
+      startReopenTimer(q);
+    } else {
+      waitingText.textContent = 'Pregunta lanzada — esperando que alguien responda...';
+      waitingSub.textContent = 'El primero en tocar una opción se bloquea automáticamente.';
+      reopenTimerBox.classList.add('hidden');
+    }
   } else if (q.status === 'locked' && q.lockedBy) {
     lockedBox.classList.remove('hidden');
     const letter = letters[q.lockedBy.optionIndex];
@@ -857,9 +915,9 @@ document.getElementById('markWrongBtn').addEventListener('click', async () => {
   const remaining = Object.keys(allPlayers || {}).filter(pid => !newFailed[pid]);
 
   if (remaining.length > 0) {
-    await qRef.update({ status: 'open', lockedBy: null, failedPlayers: newFailed });
+    await qRef.update({ status: 'open', lockedBy: null, failedPlayers: newFailed, reopenDeadline: Date.now() + 10000 });
   } else {
-    await qRef.update({ status: 'resolved_wrong_all', lockedBy: null, failedPlayers: newFailed });
+    await qRef.update({ status: 'resolved_wrong_all', lockedBy: null, failedPlayers: newFailed, reopenDeadline: null });
   }
 });
 
