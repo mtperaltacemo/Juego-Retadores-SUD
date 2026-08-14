@@ -7,7 +7,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-database-compat.js"></script>
 <style>
   :root {
@@ -372,25 +371,15 @@ function isMockMode() {
 
 function createFirebaseDb() {
   firebase.initializeApp(FIREBASE_CONFIG);
-  // Las reglas de la base de datos son publicas (no requieren haber iniciado sesion),
-  // asi que la app tiene que funcionar igual haya o no una sesion anonima activa.
-  // Se intenta iniciar sesion anonima en segundo plano (por si en el futuro se
-  // ajustan las reglas para requerirlo), pero NUNCA se bloquea ni se rompe la app
-  // si ese intento falla (por ejemplo, si el proveedor "Anonymous" no esta
-  // habilitado en el proyecto de Firebase).
-  const readyPromise = new Promise((resolve) => {
-    let settled = false;
-    const settle = () => { if (!settled) { settled = true; resolve(); } };
-    firebase.auth().onAuthStateChanged(() => settle());
-    firebase.auth().signInAnonymously().catch((err) => {
-      console.warn('Inicio de sesion anonimo no disponible (no es necesario, se continua igual):', err);
-      settle();
-    });
-    setTimeout(settle, 3000); // red de seguridad para no quedar esperando para siempre
-  });
+  // A propósito NO usamos Firebase Authentication: las reglas de la base de
+  // datos ya son públicas (".read": true, ".write": true), así que no hace
+  // falta haber iniciado sesión para leer ni escribir. Evitamos llamar a
+  // firebase.auth() por completo para no depender de que el servicio de
+  // Authentication esté inicializado en la consola del proyecto (si no lo
+  // está, firebase.auth() tira un error "auth/configuration-not-found").
   const db = firebase.database();
   return {
-    ready: readyPromise,
+    ready: Promise.resolve(),
     ref(path) {
       const r = db.ref(path);
       return {
