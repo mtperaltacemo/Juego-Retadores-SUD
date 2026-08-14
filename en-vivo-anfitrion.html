@@ -372,9 +372,21 @@ function isMockMode() {
 
 function createFirebaseDb() {
   firebase.initializeApp(FIREBASE_CONFIG);
-  const readyPromise = new Promise((resolve, reject) => {
-    firebase.auth().onAuthStateChanged(u => { if (u) resolve(); });
-    firebase.auth().signInAnonymously().catch(reject);
+  // Las reglas de la base de datos son publicas (no requieren haber iniciado sesion),
+  // asi que la app tiene que funcionar igual haya o no una sesion anonima activa.
+  // Se intenta iniciar sesion anonima en segundo plano (por si en el futuro se
+  // ajustan las reglas para requerirlo), pero NUNCA se bloquea ni se rompe la app
+  // si ese intento falla (por ejemplo, si el proveedor "Anonymous" no esta
+  // habilitado en el proyecto de Firebase).
+  const readyPromise = new Promise((resolve) => {
+    let settled = false;
+    const settle = () => { if (!settled) { settled = true; resolve(); } };
+    firebase.auth().onAuthStateChanged(() => settle());
+    firebase.auth().signInAnonymously().catch((err) => {
+      console.warn('Inicio de sesion anonimo no disponible (no es necesario, se continua igual):', err);
+      settle();
+    });
+    setTimeout(settle, 3000); // red de seguridad para no quedar esperando para siempre
   });
   const db = firebase.database();
   return {
@@ -542,21 +554,31 @@ function showScreen(name) {
 
 /* ---------- crear / continuar partida ---------- */
 document.getElementById('createGameBtn').addEventListener('click', async () => {
-  await DB.ready;
-  let code = randomGameCode();
-  await DB.ref('liveGames/' + code + '/meta').set({ createdAt: Date.now() });
-  localStorage.setItem('lasthostgame', code);
-  enterControlPanel(code);
+  try {
+    await DB.ready;
+    let code = randomGameCode();
+    await DB.ref('liveGames/' + code + '/meta').set({ createdAt: Date.now() });
+    localStorage.setItem('lasthostgame', code);
+    enterControlPanel(code);
+  } catch (err) {
+    console.error('Error al crear la partida:', err);
+    showError('No se pudo crear la partida. Revisá tu conexión a internet y que la configuración de Firebase esté bien pegada. Detalle: ' + (err && err.message ? err.message : err));
+  }
 });
 
 document.getElementById('resumeGameBtn').addEventListener('click', async () => {
   const code = document.getElementById('resumeCodeInput').value.trim().toUpperCase();
   if (!code) return;
-  await DB.ready;
-  const meta = await DB.ref('liveGames/' + code + '/meta').once();
-  if (!meta) { showError('No se encontró ninguna partida con ese código.'); return; }
-  localStorage.setItem('lasthostgame', code);
-  enterControlPanel(code);
+  try {
+    await DB.ready;
+    const meta = await DB.ref('liveGames/' + code + '/meta').once();
+    if (!meta) { showError('No se encontró ninguna partida con ese código.'); return; }
+    localStorage.setItem('lasthostgame', code);
+    enterControlPanel(code);
+  } catch (err) {
+    console.error('Error al continuar la partida:', err);
+    showError('No se pudo conectar con la partida. Revisá tu conexión a internet y que la configuración de Firebase esté bien pegada. Detalle: ' + (err && err.message ? err.message : err));
+  }
 });
 
 function enterControlPanel(code) {
