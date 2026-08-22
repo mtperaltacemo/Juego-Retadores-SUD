@@ -147,6 +147,12 @@
   .vote-option.selected { background:currentColor; }
   .vote-option.selected span { color:var(--bg); }
   .vote-option:disabled { opacity:0.5; cursor:not-allowed; }
+  .level-tab.active-tab { background:var(--blue-light); color:#08321F; border-color:var(--blue-light); }
+  .name-match-list { margin-top:6px; border-radius:10px; overflow:hidden; border:1px solid rgba(255,255,255,0.12); }
+  .name-match-item { padding:10px 12px; cursor:pointer; font-size:13.5px; border-bottom:1px solid rgba(255,255,255,0.08); }
+  .name-match-item:last-child { border-bottom:none; }
+  .name-match-item:active { background:rgba(255,255,255,0.08); }
+  .name-match-item .contact { color:var(--muted); font-size:11.5px; display:block; margin-top:2px; }
   .status-text { font-size:15.5px; font-weight:600; line-height:1.5; }
   .status-sub { font-size:13px; color:var(--muted); margin-top:6px; }
 
@@ -257,11 +263,35 @@
       <h3 style="margin-bottom:4px;">Unite al Modo Relámpago</h3>
       <p class="muted" style="font-size:13px; margin:0 0 10px;">Código: <b id="joinCodeLabel" style="color:var(--text);">----</b></p>
       <p class="muted" style="font-size:12.5px; margin:0 0 16px;">⚡ Acá todos responden a la vez con cronómetro y el puntaje se calcula solo: el que acierta más rápido, suma más.</p>
-      <label for="playerNameInput">Tu nombre</label>
-      <input type="text" id="playerNameInput" placeholder="EJ: JUAN PÉREZ" maxlength="24" style="text-transform:uppercase;" autocomplete="off">
-      <button class="primary" id="joinBtn" type="button">Entrar a jugar</button>
+      <button class="secondary" id="viewRankBeforeJoinBtn" type="button" style="width:100%; margin-bottom:14px;">🏆 Ver ranking de desafiantes</button>
+
+      <label for="playerNameInput">Tu nombre completo</label>
+      <input type="text" id="playerNameInput" placeholder="EJ: JUAN PÉREZ" maxlength="40" style="text-transform:uppercase;" autocomplete="off">
+      <div id="nameMatchList" class="name-match-list hidden"></div>
+
+      <div id="newPlayerFields" class="hidden" style="margin-top:10px;">
+        <p class="muted" style="font-size:12px; margin:0 0 8px;">No encontramos ese nombre registrado. Completá estos datos una sola vez para guardar tu historial de niveles y ranking:</p>
+        <label for="playerContactInput">Tu celular o correo electrónico</label>
+        <input type="text" id="playerContactInput" placeholder="EJ: 70123456 o correo@ejemplo.com" autocomplete="off">
+      </div>
+
+      <div id="selectedPlayerNote" class="hidden" style="margin-top:10px; font-size:13px; color:var(--good);"></div>
+
+      <button class="primary" id="joinBtn" type="button" style="margin-top:14px;">Entrar a jugar</button>
     </div>
   </div>
+
+  <!-- RANKING HISTÓRICO (visible antes o después de registrarse) -->
+  <div id="screenPlayerRank" class="hidden">
+    <div class="card">
+      <button class="secondary" id="backFromRankBtn" type="button" style="margin-bottom:12px;">◀ Volver</button>
+      <h3 style="margin-bottom:4px;">🏆 Ranking de desafiantes</h3>
+      <div id="myRankNote" class="hidden" style="margin:8px 0 14px; padding:10px 12px; border-radius:10px; background:rgba(127,212,230,0.12); font-size:13.5px;"></div>
+      <div class="settings-row" id="playerLevelTabs" style="margin-bottom:14px;"></div>
+      <div class="scoreboard" id="playerHistoricRankList"></div>
+    </div>
+  </div>
+
 
   <!-- VOTE: elegir categoría antes de empezar -->
   <div id="screenVote" class="hidden">
@@ -334,6 +364,7 @@
       <hr class="divider">
       <div class="final-rank-heading">Tabla de posiciones</div>
       <div class="final-rank-list" id="lbList"></div>
+      <p class="muted" id="lbScoreExplainer" style="font-size:10.5px; margin:10px 0 0; text-align:center;"></p>
     </div>
   </div>
 
@@ -348,6 +379,7 @@
       <div class="podium-wrap" id="podiumWrap"></div>
       <div class="final-rank-heading">Ranking final — todos los participantes</div>
       <div class="final-rank-list" id="finalRankList"></div>
+      <p class="muted" id="fScoreExplainer" style="font-size:10.5px; margin:10px 0 0; text-align:center;"></p>
     </div>
   </div>
 
@@ -517,11 +549,24 @@ const VOTE_CATEGORY_LABELS_PLAYER = {
   miscelaneos: 'Misceláneos',
   mixed: 'Mezclado (todas las categorías)',
 };
+const LEVELS = [
+  { key: 'aprendiz', label: 'Aprendiz', minCats: 1 },
+  { key: 'junior', label: 'Junior', minCats: 2 },
+  { key: 'experto', label: 'Experto', minCats: 3 },
+  { key: 'master', label: 'Master', minCats: 4 },
+];
+function playerLevel(gp) {
+  const catsPlayed = gp.categoriesPlayed ? Object.keys(gp.categoriesPlayed).length : 0;
+  let lvl = null;
+  LEVELS.forEach(l => { if (catsPlayed >= l.minCats) lvl = l; });
+  return lvl;
+}
 let player = null;
 let qTimerHandle = null;
 
 const screens = {
   join: document.getElementById('screenJoin'),
+  playerRank: document.getElementById('screenPlayerRank'),
   vote: document.getElementById('screenVote'),
   waiting: document.getElementById('screenWaiting'),
   question: document.getElementById('screenQuestion'),
@@ -545,15 +590,82 @@ if (!GAME_CODE) {
   document.getElementById('joinBtn').disabled = true;
 }
 
+let selectedGlobalPlayer = null; // { id, name, contact } si eligió uno de la lista
+let nameSearchTimer = null;
+
 document.getElementById('playerNameInput').addEventListener('input', e => {
   const pos = e.target.selectionStart;
   e.target.value = e.target.value.toUpperCase();
   e.target.setSelectionRange(pos, pos);
+
+  selectedGlobalPlayer = null;
+  document.getElementById('selectedPlayerNote').classList.add('hidden');
+  document.getElementById('newPlayerFields').classList.add('hidden');
+
+  const query = e.target.value.trim();
+  clearTimeout(nameSearchTimer);
+  if (query.length < 3) {
+    document.getElementById('nameMatchList').classList.add('hidden');
+    return;
+  }
+  nameSearchTimer = setTimeout(() => searchGlobalPlayers(query), 250);
 });
 document.getElementById('playerNameInput').addEventListener('keydown', e => {
   if (e.key === 'Enter') { e.preventDefault(); document.getElementById('joinBtn').click(); }
 });
 document.getElementById('joinBtn').addEventListener('click', joinGame);
+
+function maskContact(contact) {
+  if (!contact) return '';
+  if (contact.includes('@')) {
+    const [user, domain] = contact.split('@');
+    return user.slice(0, 2) + '***@' + domain;
+  }
+  return contact.slice(0, 3) + '***' + contact.slice(-2);
+}
+
+async function searchGlobalPlayers(query) {
+  try {
+    await DB.ready;
+    const allPlayers = (await DB.ref('globalPlayers').once()) || {};
+    const q = query.toUpperCase();
+    const matches = Object.entries(allPlayers).filter(([id, p]) => (p.name || '').toUpperCase().includes(q));
+
+    const list = document.getElementById('nameMatchList');
+    if (!matches.length) {
+      list.classList.add('hidden');
+      document.getElementById('newPlayerFields').classList.remove('hidden');
+      return;
+    }
+    document.getElementById('newPlayerFields').classList.add('hidden');
+    list.innerHTML = matches.slice(0, 8).map(([id, p]) =>
+      '<div class="name-match-item" data-id="' + id + '" data-name="' + escapeHtml(p.name || '') + '" data-contact="' + escapeHtml(p.contact || '') + '">' +
+      escapeHtml(p.name || '') + '<span class="contact">' + maskContact(p.contact || '') + '</span></div>'
+    ).join('') + '<div class="name-match-item" id="notMeOption" style="color:var(--blue-light);">Ninguno de estos, soy nuevo</div>';
+    list.classList.remove('hidden');
+
+    list.querySelectorAll('.name-match-item[data-id]').forEach(item => {
+      item.addEventListener('click', () => {
+        selectedGlobalPlayer = { id: item.dataset.id, name: item.dataset.name, contact: item.dataset.contact };
+        document.getElementById('playerNameInput').value = item.dataset.name;
+        list.classList.add('hidden');
+        document.getElementById('newPlayerFields').classList.add('hidden');
+        const note = document.getElementById('selectedPlayerNote');
+        note.textContent = '✓ Sos ' + item.dataset.name + ' — tu historial y nivel se van a sumar a esta partida.';
+        note.classList.remove('hidden');
+      });
+    });
+    const notMe = document.getElementById('notMeOption');
+    if (notMe) {
+      notMe.addEventListener('click', () => {
+        list.classList.add('hidden');
+        document.getElementById('newPlayerFields').classList.remove('hidden');
+      });
+    }
+  } catch (e) {
+    console.error('Error al buscar jugadores registrados:', e);
+  }
+}
 
 async function joinGame() {
   const name = document.getElementById('playerNameInput').value.trim();
@@ -565,18 +677,38 @@ async function joinGame() {
   try {
     await DB.ready;
 
+    let globalPlayerId, globalPlayerName, globalPlayerContact;
+
+    if (selectedGlobalPlayer) {
+      globalPlayerId = selectedGlobalPlayer.id;
+      globalPlayerName = selectedGlobalPlayer.name;
+      globalPlayerContact = selectedGlobalPlayer.contact;
+    } else {
+      const contact = document.getElementById('playerContactInput').value.trim();
+      if (!contact) {
+        showError('Ingresá tu celular o correo para guardar tu historial de niveles.');
+        joinBtn.disabled = false;
+        return;
+      }
+      globalPlayerId = randomId();
+      globalPlayerName = name;
+      globalPlayerContact = contact;
+      await DB.ref('globalPlayers/' + globalPlayerId).set({
+        name: globalPlayerName, contact: globalPlayerContact, createdAt: Date.now(),
+        totalScore: 0, categoriesPlayed: {}, correctCount: 0, wrongCount: 0, noAnswerCount: 0, correctTimeSumSec: 0,
+      });
+    }
+
     // Prefijo propio ("liveplayer:kahoot:") para que la identidad de un jugador en el
     // Modo Kahoot no choque con la del Modo Clásico si comparten el mismo código de partida.
     const storageKey = 'liveplayer:kahoot:' + GAME_CODE;
-    let saved = null;
-    try { saved = JSON.parse(sessionStorage.getItem(storageKey)); } catch (e) {}
-
-    const playerId = (saved && saved.id) || randomId();
-    player = { id: playerId, name };
+    const playerId = globalPlayerId;
+    player = { id: playerId, name: globalPlayerName, globalId: globalPlayerId };
     sessionStorage.setItem(storageKey, JSON.stringify(player));
+    localStorage.setItem('retadoresGlobalPlayer', JSON.stringify({ id: globalPlayerId, name: globalPlayerName, contact: globalPlayerContact }));
 
     const playerRef = DB.ref('kahootGames/' + GAME_CODE + '/players/' + playerId);
-    await playerRef.update({ name, joinedAt: Date.now() });
+    await playerRef.update({ name: globalPlayerName, joinedAt: Date.now() });
     const existing = await playerRef.once();
     if (!existing || typeof existing.score !== 'number') {
       await playerRef.update({ score: 0 });
@@ -771,8 +903,22 @@ function showLeaderboardScreen(game, round, myAnswer) {
     const medal = idx === 0 ? '🥇' : idx === 1 ? '🥈' : idx === 2 ? '🥉' : ('#' + (idx + 1));
     const meTag = isMe ? '<span class="me-tag">(VOS)</span>' : '';
     const rowClasses = ['final-rank-row', isMe ? 'me' : '', idx === 0 ? 'winner' : ''].filter(Boolean).join(' ');
-    return '<div class="' + rowClasses + '"><span class="final-rank-pos">' + medal + '</span><span class="final-rank-name">' + escapeHtml(p.name || '') + meTag + '</span><span class="final-rank-score">' + (p.score || 0) + '</span></div>';
+    const correctCount = p.correctCount || 0;
+    const wrongCount = p.wrongCount || 0;
+    const noAnswerCount = p.noAnswerCount || 0;
+    const avgTime = correctCount > 0 ? (p.correctTimeSumSec / correctCount) : null;
+    const avgTimeStr = avgTime !== null ? avgTime.toFixed(1) + 's' : '—';
+    return '<div class="' + rowClasses + '" style="flex-direction:column; align-items:stretch;">' +
+      '<div style="display:flex; justify-content:space-between; align-items:center;">' +
+      '<span class="final-rank-pos">' + medal + '</span><span class="final-rank-name">' + escapeHtml(p.name || '') + meTag + '</span><span class="final-rank-score">' + (p.score || 0) + '</span>' +
+      '</div>' +
+      '<div class="muted" style="font-size:11px; margin-top:2px;">✓ ' + correctCount + ' &nbsp;·&nbsp; ✗ ' + wrongCount + ' &nbsp;·&nbsp; ⃝ ' + noAnswerCount + ' &nbsp;·&nbsp; ⏱ ' + avgTimeStr + '</div>' +
+      '</div>';
   }).join('');
+  const lbExplainer = document.getElementById('lbScoreExplainer');
+  if (lbExplainer) {
+    lbExplainer.innerHTML = '⏱ 1-5s → 10 pts · 6-10s → 7 pts · 11-15s → 5 pts · 16-20s → 3 pts · sin responder o error → 0 pts.';
+  }
 }
 
 function showFinishedScreen(game) {
@@ -799,8 +945,124 @@ function showFinishedScreen(game) {
     const medal = isWinner ? '🥇' : idx === 1 ? '🥈' : idx === 2 ? '🥉' : ('#' + (idx + 1));
     const meTag = isMe ? '<span class="me-tag">(VOS)</span>' : '';
     const rowClasses = ['final-rank-row', isMe ? 'me' : '', isWinner ? 'winner' : ''].filter(Boolean).join(' ');
-    return '<div class="' + rowClasses + '"><span class="final-rank-pos">' + medal + '</span><span class="final-rank-name">' + escapeHtml(p.name || '') + meTag + '</span><span class="final-rank-score">' + (p.score || 0) + '</span></div>';
+    const correctCount = p.correctCount || 0;
+    const wrongCount = p.wrongCount || 0;
+    const noAnswerCount = p.noAnswerCount || 0;
+    const avgTime = correctCount > 0 ? (p.correctTimeSumSec / correctCount) : null;
+    const avgTimeStr = avgTime !== null ? avgTime.toFixed(1) + 's' : '—';
+    return '<div class="' + rowClasses + '" style="flex-direction:column; align-items:stretch;">' +
+      '<div style="display:flex; justify-content:space-between; align-items:center;">' +
+      '<span class="final-rank-pos">' + medal + '</span><span class="final-rank-name">' + escapeHtml(p.name || '') + meTag + '</span><span class="final-rank-score">' + (p.score || 0) + '</span>' +
+      '</div>' +
+      '<div class="muted" style="font-size:11px; margin-top:2px;">✓ ' + correctCount + ' &nbsp;·&nbsp; ✗ ' + wrongCount + ' &nbsp;·&nbsp; ⃝ ' + noAnswerCount + ' &nbsp;·&nbsp; ⏱ ' + avgTimeStr + '</div>' +
+      '</div>';
   }).join('');
+  const fExplainer = document.getElementById('fScoreExplainer');
+  if (fExplainer) {
+    fExplainer.innerHTML = '⏱ Cómo se puntúa: 1-5s → 10 pts · 6-10s → 7 pts · 11-15s → 5 pts · 16-20s → 3 pts · sin responder o error → 0 pts.';
+  }
+}
+
+/* ---------- ranking de desafiantes (visible antes o después de registrarse) ---------- */
+let currentPlayerRankLevel = 'aprendiz';
+let rankReturnScreen = 'join';
+
+document.getElementById('viewRankBeforeJoinBtn').addEventListener('click', async () => {
+  rankReturnScreen = 'join';
+  await openPlayerRankScreen();
+});
+document.getElementById('backFromRankBtn').addEventListener('click', () => {
+  showScreen(rankReturnScreen);
+});
+
+async function openPlayerRankScreen() {
+  showScreen('playerRank');
+  await DB.ready;
+
+  const myNote = document.getElementById('myRankNote');
+  if (player) {
+    try {
+      const gp = await DB.ref('globalPlayers/' + player.globalId).once();
+      if (gp) {
+        const lvl = playerLevel(gp);
+        if (lvl) {
+          currentPlayerRankLevel = lvl.key;
+          const allInLevel = await rankedListForLevel(lvl.key);
+          const myPos = allInLevel.findIndex(([id]) => id === player.globalId);
+          myNote.textContent = '🏅 Vos sos ' + escapeHtml(gp.name || '') + ' — nivel ' + lvl.label + (myPos >= 0 ? ', puesto #' + (myPos + 1) : '');
+        } else {
+          myNote.textContent = '🏅 Vos sos ' + escapeHtml(gp.name || '') + ' — todavía no alcanzaste un nivel (jugá tu primera categoría completa).';
+        }
+        myNote.classList.remove('hidden');
+      }
+    } catch (e) { console.error('Error al buscar mi posición:', e); }
+  } else {
+    myNote.classList.add('hidden');
+  }
+
+  renderPlayerLevelTabs();
+  await loadPlayerHistoricRanking(currentPlayerRankLevel);
+}
+
+function renderPlayerLevelTabs() {
+  const tabs = document.getElementById('playerLevelTabs');
+  tabs.innerHTML = LEVELS.map(l =>
+    '<button type="button" class="secondary level-tab" data-level="' + l.key + '">' + l.label + '</button>'
+  ).join('');
+  tabs.querySelectorAll('.level-tab').forEach(btn => {
+    btn.classList.toggle('active-tab', btn.dataset.level === currentPlayerRankLevel);
+    btn.addEventListener('click', async () => {
+      currentPlayerRankLevel = btn.dataset.level;
+      tabs.querySelectorAll('.level-tab').forEach(b => b.classList.toggle('active-tab', b === btn));
+      await loadPlayerHistoricRanking(currentPlayerRankLevel);
+    });
+  });
+}
+
+async function rankedListForLevel(levelKey) {
+  const allPlayers = (await DB.ref('globalPlayers').once()) || {};
+  const inLevel = Object.entries(allPlayers).filter(([id, gp]) => {
+    const lvl = playerLevel(gp);
+    return lvl && lvl.key === levelKey;
+  });
+  inLevel.sort((a, b) => {
+    const scoreDiff = (b[1].totalScore || 0) - (a[1].totalScore || 0);
+    if (scoreDiff !== 0) return scoreDiff;
+    const avgA = a[1].correctCount > 0 ? (a[1].correctTimeSumSec / a[1].correctCount) : 999;
+    const avgB = b[1].correctCount > 0 ? (b[1].correctTimeSumSec / b[1].correctCount) : 999;
+    return avgA - avgB;
+  });
+  return inLevel;
+}
+
+async function loadPlayerHistoricRanking(levelKey) {
+  const box = document.getElementById('playerHistoricRankList');
+  box.innerHTML = '<div class="empty-note">Cargando...</div>';
+  try {
+    const inLevel = await rankedListForLevel(levelKey);
+    if (!inLevel.length) {
+      box.innerHTML = '<div class="empty-note">Todavía nadie alcanzó este nivel. ¡Podrías ser el primero!</div>';
+      return;
+    }
+    const top20 = inLevel.slice(0, 20);
+    box.innerHTML = top20.map(([id, gp], idx) => {
+      const isMe = player && id === player.globalId;
+      const medal = idx === 0 ? '🥇' : idx === 1 ? '🥈' : idx === 2 ? '🥉' : ('#' + (idx + 1));
+      const avgTime = gp.correctCount > 0 ? (gp.correctTimeSumSec / gp.correctCount).toFixed(1) + 's' : '—';
+      const catsCount = gp.categoriesPlayed ? Object.keys(gp.categoriesPlayed).length : 0;
+      const meTag = isMe ? '<span class="me-tag">(VOS)</span>' : '';
+      const rowClasses = ['final-rank-row', isMe ? 'me' : ''].filter(Boolean).join(' ');
+      return '<div class="' + rowClasses + '" style="flex-direction:column; align-items:stretch;">' +
+        '<div style="display:flex; justify-content:space-between; align-items:center;">' +
+        '<span class="final-rank-pos">' + medal + '</span><span class="final-rank-name">' + escapeHtml(gp.name || '') + meTag + '</span><span class="final-rank-score">' + (gp.totalScore || 0) + ' pts</span>' +
+        '</div>' +
+        '<div class="muted" style="font-size:11px; margin-top:2px;">' + catsCount + ' categoría' + (catsCount === 1 ? '' : 's') + ' &nbsp;·&nbsp; ⏱ prom. ' + avgTime + '</div>' +
+        '</div>';
+    }).join('');
+  } catch (e) {
+    console.error('Error al cargar ranking:', e);
+    box.innerHTML = '<div class="empty-note">No se pudo cargar el ranking.</div>';
+  }
 }
 
 </script>
