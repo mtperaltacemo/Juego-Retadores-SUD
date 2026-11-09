@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Retadores SUD — Desafía tu conocimiento</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0B3D66">
+<meta name="description" content="Trivia para jóvenes SUD: pon a prueba tu conocimiento de la Biblia, Doctrina y Convenios, el Libro de Mormón y más.">
+<link rel="icon" href="icons/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -4719,6 +4724,13 @@ renderResult = function(cd, isNewBest) {
    INICIO
    ============================================================ */
 showScreen('register');
+</script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('service-worker.js').catch(() => {});
+  });
+}
 </script>
 </body>
 </html>

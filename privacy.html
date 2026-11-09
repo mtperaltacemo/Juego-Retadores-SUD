@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retadores SUD — Política de Privacidad</title>
+<meta name="theme-color" content="#0B3D66">
+<link rel="icon" href="icons/icon-192.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-red: #0B3D66;
+    --bg-red-deep: #041B2E;
+    --panel: #0A2033;
+    --blue: #3E8FC4;
+    --blue-dim: #245C86;
+    --text: #F3FBFF;
+    --muted: #B7C9D6;
+    --yellow: #F2B705;
+    --ice: #EFF6F8;
+    --ink-soft: #4E6577;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin:0; padding:0; background:var(--ice); font-family:'Inter',sans-serif; color:var(--ink-soft); }
+  body { display:flex; justify-content:center; padding:32px 16px 60px; }
+  .wrap { width:100%; max-width:720px; }
+  .topbar { display:flex; align-items:center; gap:12px; margin-bottom:22px; }
+  .topbar img { height:34px; width:auto; }
+  h1 {
+    font-family:'Bebas Neue',sans-serif; font-size:32px; font-weight:400; letter-spacing:.03em;
+    text-transform:uppercase; color:var(--bg-red); margin:0 0 4px;
+  }
+  .updated { font-size:13px; color:#7D93A3; margin-bottom:24px; }
+  .card {
+    background:var(--panel); color:var(--text); border-radius:14px; padding:26px 28px; margin-bottom:18px;
+    border:1px solid rgba(255,255,255,0.06);
+  }
+  .card.light { background:#FFFFFF; color:var(--ink-soft); border:1px solid rgba(18,59,99,0.1); }
+  h2 {
+    font-family:'Space Grotesk',sans-serif; font-size:17px; color:var(--yellow); margin:0 0 10px;
+  }
+  .card.light h2 { color:var(--bg-red); }
+  p, li { font-size:14.5px; line-height:1.6; margin:0 0 10px; }
+  .card.light p, .card.light li { color:var(--ink-soft); }
+  .card p, .card li { color:#D9E7EE; }
+  ul { margin:0 0 10px; padding-left:20px; }
+  a { color:var(--blue); }
+  .card.light a { color:var(--bg-red); }
+  footer { text-align:center; font-size:12.5px; color:#8CA0AE; margin-top:28px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <img src="icons/icon-96.png" alt="Retadores SUD">
+    <h1 style="margin:0;">Retadores SUD</h1>
+  </div>
+  <h1 style="font-size:22px;">Política de Privacidad</h1>
+  <p class="updated">Última actualización: noviembre de 2026</p>
+
+  <div class="card light">
+    <h2>¿Qué es Retadores SUD?</h2>
+    <p>Retadores SUD es una trivia de preguntas y respuestas (Biblia, Doctrina y Convenios, Libro de Mormón y Misceláneos), pensada para jóvenes de la Iglesia de Jesucristo de los Santos de los Últimos Días. Esta política explica qué información se recopila al usar la app (ya sea desde el navegador o desde la versión instalable para Android) y cómo se usa.</p>
+  </div>
+
+  <div class="card">
+    <h2>Información que recopilamos</h2>
+    <p>Para participar, se pide un <b>nombre</b> y un <b>dato de contacto</b> (correo electrónico o número de celular). Ese dato de contacto se usa únicamente como identificador único para guardar tu progreso y ubicarte en el ranking — no se usa para enviarte mensajes ni publicidad.</p>
+    <ul>
+      <li><b>Modo Individual</b> (práctica por tu cuenta): tu nombre, tu puntaje y tu progreso por categoría se guardan solo en el almacenamiento local de tu propio dispositivo/navegador. No se envían a ningún servidor.</li>
+      <li><b>Modo Relámpago y Modo Clásico</b> (juego en vivo con otros participantes): tu nombre, tu dato de contacto, tus respuestas y tu puntaje se guardan en una base de datos en tiempo real (Firebase, de Google) para poder mostrar el ranking a todos los participantes de esa partida y mantener un historial de partidas jugadas.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Cómo se usa la información</h2>
+    <ul>
+      <li>Identificarte de forma única en el ranking y evitar duplicados.</li>
+      <li>Mostrar tu progreso, nivel e historial dentro de la app.</li>
+      <li>Permitir que, durante una partida en vivo, otros participantes vean tu nombre y puntaje en pantalla.</li>
+    </ul>
+    <p>No vendemos ni compartimos tu información con terceros con fines comerciales o publicitarios. La app no muestra anuncios.</p>
+  </div>
+
+  <div class="card">
+    <h2>Dónde se guarda la información</h2>
+    <p>Los datos de las partidas en vivo se almacenan en Firebase Realtime Database (infraestructura de Google Cloud). Los datos del Modo Individual quedan únicamente en el almacenamiento local de tu dispositivo y se borran si limpiás los datos del navegador/app.</p>
+  </div>
+
+  <div class="card">
+    <h2>Tus opciones</h2>
+    <p>Podés jugar el Modo Individual sin registrar ningún dato de contacto que salga de tu dispositivo. Si querés que eliminemos tu nombre y contacto de la base de datos de ranking, escribinos a la dirección de contacto que aparece abajo.</p>
+  </div>
+
+  <div class="card">
+    <h2>Contacto</h2>
+    <p>Si tenés preguntas sobre esta política o querés solicitar la eliminación de tus datos, escribí a: <a href="mailto:mtperaltacemo@gmail.com">mtperaltacemo@gmail.com</a></p>
+  </div>
+
+  <footer>Retadores SUD — app no oficial, creada por un miembro de la Iglesia para uso de jóvenes y clases. No es un producto oficial de la Iglesia de Jesucristo de los Santos de los Últimos Días.</footer>
+</div>
+</body>
+</html>
